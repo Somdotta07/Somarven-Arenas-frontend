@@ -1,4 +1,5 @@
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Signin from './components/SignIn';
 import SignUp from './components/SignUp';
@@ -13,14 +14,17 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Signin />
-      <SignUp />
-      <Items />
-      <Details />
-      <Reservation />
-      <MyReservations />
-      <DeleteItem />
-      <AddItem />
+      <Routes>
+        <Route exact path="/signin" element={<Signin />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/items" element={<Items />} />
+        <Route path="/details" element={<Details />} />
+        <Route path="/reservation" element={<Reservation />} />
+        <Route path="/myreservations" element={<MyReservations />} />
+        <Route path="/additem" element={<AddItem />} />
+        <Route path="/deleteitem" element={<DeleteItem />} />
+      </Routes>
+
     </div>
   );
 }
