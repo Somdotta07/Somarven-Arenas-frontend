@@ -1,8 +1,10 @@
 import React from 'react';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 function NavBar() {
   return (
-    <div>NavBar</div>
+    <>
+    </>
   );
 }
 
