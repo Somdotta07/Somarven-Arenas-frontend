@@ -37,8 +37,9 @@
     transform: rotate(360deg);
   }
 }
- /* Item page */
-.itemlist{
+
+/* Item page */
+.itemlist {
   margin-top: 20%;
   list-style-type: none;
 }

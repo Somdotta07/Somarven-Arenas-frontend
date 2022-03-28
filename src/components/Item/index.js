@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import './item.css';
+import './Item.css';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BsCaretRightFill, BsFillCaretLeftFill } from 'react-icons/bs';
@@ -25,7 +25,7 @@ const Item = () => {
 
   return (
     <div>
-      <h1 className="fw-bolder text-center">Beautiful Arenas</h1>
+      <h1 className="fw-bolder text-center my-5">Beautiful Arenas</h1>
       <p className="text-muted text-center main-screen-subtitle">
         Select an Arena
       </p>
