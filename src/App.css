@@ -37,7 +37,7 @@
     transform: rotate(360deg);
   }
 }
-
+ /* Item page */
 .itemlist{
   margin-top: 20%;
   list-style-type: none;
@@ -46,3 +46,5 @@
 .card {
   border-radius: 50% !important;
 }
+
+/* Details page */

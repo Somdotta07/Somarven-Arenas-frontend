@@ -11,7 +11,7 @@ function NavBar() {
             <Nav>
               <Nav.Link href="/sign in">Sign in</Nav.Link>
               <Nav.Link href="/signup">Sign up</Nav.Link>
-              <Nav.Link href="/items">Items</Nav.Link>
+              <Nav.Link href="/">Items</Nav.Link>
               <Nav.Link href="/details">Details</Nav.Link>
               <Nav.Link href="/reservation">Reservation</Nav.Link>
               <Nav.Link href="/myreservations">MyReservations</Nav.Link>

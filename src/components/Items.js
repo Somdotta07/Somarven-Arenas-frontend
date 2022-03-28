@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Items() {
   const [data, setData] = useState([]);
@@ -43,9 +44,10 @@ function Items() {
                   {' '}
                   {product.price}
                 </p>
-                <a href="details" className="btn btn-primary">
+                <NavLink to={`/products/${product.id}`} className="btn btn-primary">
                   Details
-                </a>
+                </NavLink>
+                <button type="button" className="btn btn-warning">Reserve</button>
               </div>
             </div>
           </div>
