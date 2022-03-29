@@ -5,7 +5,7 @@ import NavBar from './components/NavBar';
 // import SignUp from './components/SignUp';
 import Item from './components/Item';
 import DetailsPage from './components/Details/DetailsPage';
-// import Reservation from './components/Reservation';
+import Reservation from './components/Reservation/Reservation';
 // import MyReservations from './components/MyReservations';
 // import DeleteItem from './components/DeleteItem';
 // import AddItem from './components/AddItem';
@@ -19,10 +19,12 @@ function App() {
         <Route path="/signup" element={<SignUp />} /> */}
         <Route exact path="/" element={<Item />} />
         <Route path="/Details/:id" element={<DetailsPage />} />
-        {/* <Route path="/reservation" element={<Reservation />} />
-        <Route path="/myreservations" element={<MyReservations />} />
+        <Route path="/reservation" element={<Reservation />} />
+        {/* <Route path="/myreservations" element={<MyReservations />} />
         <Route path="/additem" element={<AddItem />} />
         <Route path="/deleteitem" element={<DeleteItem />} /> */}
+        {' '}
+        */}
       </Routes>
 
     </div>
