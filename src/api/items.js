@@ -10,7 +10,6 @@ export const getItems = async (dispatch) => {
 };
 
 export const getItemsDetails = (id) => async (dispatch) => {
-  console.log(id);
   fetch(`http://127.0.0.1:3000/api/v1/items/${id} `)
     .then((response) => response.json())
     .then((res) => dispatch(fetchItemsDetails(res)));
