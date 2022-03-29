@@ -16,9 +16,7 @@ const Items = ({ item, onClick }) => {
         </div>
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
-          <p className="card-text text-muted item-card-description">
-            Lorem ipsum dolor sit amet
-          </p>
+
           <p className="card-text text-muted item-card-description">
             {description}
           </p>

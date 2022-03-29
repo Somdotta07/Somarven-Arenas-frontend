@@ -1,28 +1,20 @@
 import { useDispatch, useSelector } from 'react-redux';
-import './item.css';
-import { useEffect, useState } from 'react';
+import './Item.css';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BsCaretRightFill, BsFillCaretLeftFill } from 'react-icons/bs';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Items from './Items';
-import { getItemsDetails } from '../../api/items';
+import { getItems, getItemsDetails } from '../../api/items';
 import 'swiper/css';
 
 const Item = () => {
-  const product = useSelector((state) => state.items.items) || [];
+  const items = useSelector((state) => state.items.items) || [];
   const dispatch = useDispatch();
-  const [width, setWidth] = useState(window.innerWidth);
-
-  const updateArea = () => {
-    setWidth(window.innerWidth);
-  };
 
   useEffect(() => {
-    window.addEventListener('resize', updateArea);
-
-    return () => window.removeEventListener('resize', updateArea);
-  }, [product]);
-
+    dispatch(getItems);
+  }, []);
   const navigate = useNavigate();
 
   const renderDetailsPage = (id) => {
@@ -33,13 +25,13 @@ const Item = () => {
 
   return (
     <div>
-      <h1 className="fw-bolder text-center">Beautiful Arenas</h1>
+      <h1 className="fw-bolder text-center my-5">Beautiful Arenas</h1>
       <p className="text-muted text-center main-screen-subtitle">
         Select an Arena
       </p>
       <div className="row">
-        <Swiper spaceBetween={0} slidesPerView={width > 768 ? 3 : 1}>
-          {product.map((item) => (
+        <Swiper spaceBetween={0}>
+          {items.map((item) => (
             <SwiperSlide key={item.id}>
               <div className="d-flex justify-content-center">
                 <Items
