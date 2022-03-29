@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import reservedItems from '../../api/reservedItems';
+import 'react-datepicker/dist/react-datepicker.css';
 import './Reserve.css';
 
 const ReservationForm = () => {
@@ -31,8 +32,8 @@ const ReservationForm = () => {
       return;
     }
     const response = await reservedItems({
-      Start_date: selectedDate,
-      End_date: selectedDate,
+      start_date: selectedDate,
+      end_date: selectedDate,
       user_id: user.id,
       item_id: parseInt(itemId, 10),
     });
@@ -69,7 +70,7 @@ const ReservationForm = () => {
             <DatePicker className=" w-50 me-2 rounded-pill form-control" onChange={onChange} value={selectedDate} />
           </div>
           <div className="d-flex w-100 justify-content-center pt-5">
-            <button className="btn btn-outline-success rounded-pill" type="submit">Reserve Now</button>
+            <button className="btn btn-outline-success rounded-pill" type="submit">Reserve</button>
           </div>
         </section>
       </form>
