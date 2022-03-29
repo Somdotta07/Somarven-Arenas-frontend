@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import DatePicker from 'react-date-picker';
+import DatePicker from 'react-datepicker';
 import reservedItems from '../../api/reservedItems';
 import './Reserve.css';
 

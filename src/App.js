@@ -5,8 +5,8 @@ import NavBar from './components/NavBar';
 // import SignUp from './components/SignUp';
 import Item from './components/Item';
 import DetailsPage from './components/Details/DetailsPage';
+import ReservationForm from './components/Reservation/ReservationForm';
 import Reservation from './components/Reservation/Reservation';
-// import MyReservations from './components/MyReservations';
 // import DeleteItem from './components/DeleteItem';
 // import AddItem from './components/AddItem';
 
@@ -15,16 +15,11 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-        {/* <Route exact path="/signin" element={<Signin />} />
-        <Route path="/signup" element={<SignUp />} /> */}
+
         <Route exact path="/" element={<Item />} />
         <Route path="/Details/:id" element={<DetailsPage />} />
-        <Route path="/reservation" element={<Reservation />} />
-        {/* <Route path="/myreservations" element={<MyReservations />} />
-        <Route path="/additem" element={<AddItem />} />
-        <Route path="/deleteitem" element={<DeleteItem />} /> */}
-        {' '}
-        */}
+        <Route path="/reserve" element={<ReservationForm />} />
+        <Route path="/reservations" element={<Reservation />} />
       </Routes>
 
     </div>
