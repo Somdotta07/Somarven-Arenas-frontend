@@ -1,3 +1,8 @@
+aside {
+  height: 95vh;
+  border-right: 3px solid lightgrey;
+}
+
 .sidebar-items {
   margin-top: 10vh;
 }
