@@ -40,7 +40,6 @@ const VerticalNav = () => {
           </span>
           <span className="p-2">
             <BsVimeo />
-
           </span>
           <span className="p-2">
             <GrPinterest />
