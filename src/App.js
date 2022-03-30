@@ -8,8 +8,8 @@ import DetailsPage from './components/Details/DetailsPage';
 import ReservationForm from './components/Reservation/ReservationForm';
 import Reservation from './components/Reservation/Reservation';
 import VerticalNav from './components/VerticalNav';
+import AddItem from './components/AddItem/AddItem';
 // import DeleteItem from './components/DeleteItem';
-// import AddItem from './components/AddItem';
 
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
             <Route path="/Details/:id" element={<DetailsPage />} />
             <Route path="/reserve" element={<ReservationForm />} />
             <Route path="/reservations" element={<Reservation />} />
+            <Route path="/AddItem" element={<AddItem />} />
           </Routes>
         </div>
       </div>

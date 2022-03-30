@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { fetchItems } from '../redux/items/items';
 import { fetchItemsDetails } from '../redux/items/ItemDetails';
+import { addItem } from '../redux/items/AddItem';
 
 const BASE_URL = 'http://127.0.0.1:3000/api/v1/items';
 
@@ -13,4 +14,21 @@ export const getItemsDetails = (id) => async (dispatch) => {
   fetch(`http://127.0.0.1:3000/api/v1/items/${id} `)
     .then((response) => response.json())
     .then((res) => dispatch(fetchItemsDetails(res.data)));
+};
+
+export const AddItemHandler = async (dispatch, data) => {
+  const formData = new FormData();
+  formData.append('name', data.name);
+  formData.append('image', data.image);
+  formData.append('description', data.description);
+  formData.append('city', data.city);
+  formData.append('capacity', data.capacity);
+  formData.append('price', data.price);
+  try {
+    const response = await axios.post('http://127.0.0.1:3000/api/v1/items/create', formData);
+    dispatch(addItem(response.data.data));
+    return response;
+  } catch (err) {
+    return err.response;
+  }
 };
