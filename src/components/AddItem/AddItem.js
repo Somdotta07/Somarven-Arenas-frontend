@@ -1,13 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
-// import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { AddItemHandler, getItems } from '../../api/items';
 
 const AddItem = () => {
   const dispatch = useDispatch();
-  //   const [isItemAdded, setIsItemAdded] = useState(null);
-  //   const [isCorrect, setIsCorrect] = useState(null);
 
   const {
     register, handleSubmit, reset,
