@@ -1,27 +1,22 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { useState } from 'react';
+// import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { AddItemHandler, getItems } from '../../api/items';
 
 const AddItem = () => {
   const dispatch = useDispatch();
-  const [isItemAdded, setIsItemAdded] = useState(null);
-  const [isCorrect, setIsCorrect] = useState(null);
+  //   const [isItemAdded, setIsItemAdded] = useState(null);
+  //   const [isCorrect, setIsCorrect] = useState(null);
 
   const {
     register, handleSubmit, reset,
   } = useForm();
 
   const onSubmit = async (data) => {
-    const response = await AddItemHandler(dispatch, data);
-    if (response.status === 201) {
-      setIsItemAdded(true);
-      reset();
-      dispatch(getItems);
-    } else {
-      setIsCorrect(JSON.stringify(response.data));
-    }
+    dispatch(AddItemHandler(data));
+    reset();
+    dispatch(getItems);
   };
 
   return (
@@ -37,21 +32,6 @@ const AddItem = () => {
           <div className="d-flex justify-content-end">
             <button type="submit" className="btn btn-primary m-1">Submit</button>
           </div>
-          {
-            isItemAdded && (
-              <div className="alert alert-success mt-3 ms-1" role="alert">
-                New Arena Added Successfully
-              </div>
-            )
-          }
-
-          {
-            isCorrect && (
-              <div className="alert alert-danger mt-3 ms-1" role="alert">
-                {isCorrect}
-              </div>
-            )
-          }
         </form>
 
       </div>

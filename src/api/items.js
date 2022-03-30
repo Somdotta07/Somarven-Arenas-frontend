@@ -16,7 +16,7 @@ export const getItemsDetails = (id) => async (dispatch) => {
     .then((res) => dispatch(fetchItemsDetails(res.data)));
 };
 
-export const AddItemHandler = async (dispatch, data) => {
+export const AddItemHandler = (data) => async (dispatch) => {
   const formData = new FormData();
   formData.append('name', data.name);
   formData.append('image', data.image);
@@ -24,11 +24,10 @@ export const AddItemHandler = async (dispatch, data) => {
   formData.append('city', data.city);
   formData.append('capacity', data.capacity);
   formData.append('price', data.price);
-  try {
-    const response = await axios.post('http://127.0.0.1:3000/api/v1/items/create', formData);
-    dispatch(addItem(response.data.data));
-    return response;
-  } catch (err) {
-    return err.response;
-  }
+  await fetch('http://localhost:3000/api/v1/items/create', {
+    method: 'POST',
+    body: formData,
+  })
+    .then((res) => res.json())
+    .then((resResponse) => dispatch(addItem(resResponse)));
 };
