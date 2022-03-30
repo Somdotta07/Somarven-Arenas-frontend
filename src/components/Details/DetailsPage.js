@@ -1,9 +1,11 @@
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { BsFillArrowRightCircleFill, BsFillGearFill } from 'react-icons/bs';
 import './Details.css';
 
 const DetailsPage = () => {
   const item = useSelector((state) => state.itemsDetailsReducer.items) || [];
+  const navigate = useNavigate();
 
   return (
     <div className="container mt-5">
@@ -35,7 +37,7 @@ const DetailsPage = () => {
           <div className="d-flex justify-content-end">
             <div className="reserve p-s">
               <BsFillGearFill className="mx-2" size={25} color="white" />
-              <button className="btn btn-primary" type="submit">Reserve</button>
+              <button className="btn btn-primary" type="submit" onClick={() => { navigate('/reserve', { state: { id: item.id } }); }}>Reserve</button>
               <BsFillArrowRightCircleFill className="mx-2" size={25} color="white" />
             </div>
           </div>

@@ -13,8 +13,8 @@ function NavBar() {
               <Nav.Link href="/signup">Sign up</Nav.Link>
               <Nav.Link href="/">Items</Nav.Link>
               <Nav.Link href="/details">Details</Nav.Link>
-              <Nav.Link href="/reservation">Reservation</Nav.Link>
-              <Nav.Link href="/myreservations">MyReservations</Nav.Link>
+              <Nav.Link href="/reserve">Reserve</Nav.Link>
+              <Nav.Link href="/reservations">MyReservations</Nav.Link>
               <Nav.Link href="/deleteitem">DeleteItem</Nav.Link>
               <Nav.Link href="/additem">AddItem</Nav.Link>
             </Nav>
