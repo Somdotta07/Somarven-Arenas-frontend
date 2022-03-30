@@ -9,7 +9,8 @@ import './Reserve.css';
 const ReservationForm = () => {
   const items = useSelector((state) => state.items.items) || [];
   const location = useLocation();
-  const [selectedDate, onChange] = useState(new Date());
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
   const [loginResponse, setLoginResponse] = useState('');
 
   const getItemId = () => {
@@ -27,15 +28,15 @@ const ReservationForm = () => {
 
   const reserveSubmit = async (e) => {
     e.preventDefault();
-    if (!user.id) {
-      setLoginResponse('Please Sign in');
-      return;
-    }
+    // if (!user.id) {
+    //   setLoginResponse('Please Sign in');
+    //   return;
+    // }
     const response = await reservedItems({
-      start_date: selectedDate,
-      end_date: selectedDate,
+      start_date: startDate,
+      end_date: endDate,
       user_id: user.id,
-      item_id: parseInt(itemId, 10),
+      id: parseInt(itemId, 10),
     });
     if (!response.error) {
       setLoginResponse('Succesfully Reserved');
@@ -64,10 +65,10 @@ const ReservationForm = () => {
             </select>
           </div>
           <div className="d-flex justify-content-center w-100 mt-3">
-            <DatePicker className=" w-50 me-2 rounded-pill form-control" onChange={onChange} value={selectedDate} />
+            <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
           </div>
           <div className="d-flex justify-content-center w-100 mt-3">
-            <DatePicker className=" w-50 me-2 rounded-pill form-control" onChange={onChange} value={selectedDate} />
+            <DatePicker selected={endDate} onChange={(date) => setEndDate(date)} />
           </div>
           <div className="d-flex w-100 justify-content-center pt-5">
             <button className="btn btn-outline-success rounded-pill" type="submit">Reserve</button>

@@ -27,12 +27,12 @@ const Reservation = () => {
               </tr>
             </thead>
             <tbody>
-              {reservations.map((reservation) => (
-                <tr key={reservation.id}>
-                  <th scope="row">{ reservation.id + 1}</th>
-                  <td>{reservation[1].item}</td>
-                  <td>{reservation[0].start_date}</td>
-                  <td>{reservation[0].end_date}</td>
+              {reservations.map((reservation, index) => (
+                <tr key={reservation.reservation.id}>
+                  <th scope="row">{ index + 1}</th>
+                  <td>{reservation.item.name}</td>
+                  <td>{reservation.reservation.start_date}</td>
+                  <td>{reservation.reservation.end_date}</td>
                 </tr>
               ))}
             </tbody>
