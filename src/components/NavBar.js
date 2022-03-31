@@ -15,7 +15,7 @@ function NavBar() {
               <Nav.Link href="/details">Details</Nav.Link>
               <Nav.Link href="/reserve">Reserve</Nav.Link>
               <Nav.Link href="/reservations">MyReservations</Nav.Link>
-              <Nav.Link href="/deleteitem">DeleteItem</Nav.Link>
+              <Nav.Link href="/delete-item">DeleteItem</Nav.Link>
               <Nav.Link href="/additem">AddItem</Nav.Link>
             </Nav>
           </Navbar.Collapse>

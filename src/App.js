@@ -7,7 +7,7 @@ import Item from './components/Item';
 import DetailsPage from './components/Details/DetailsPage';
 import ReservationForm from './components/Reservation/ReservationForm';
 import Reservation from './components/Reservation/Reservation';
-// import DeleteItem from './components/DeleteItem';
+import DeleteItem from './components/Item/deleteItem';
 // import AddItem from './components/AddItem';
 
 function App() {
@@ -15,13 +15,12 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-
         <Route exact path="/" element={<Item />} />
         <Route path="/Details/:id" element={<DetailsPage />} />
         <Route path="/reserve" element={<ReservationForm />} />
+        <Route path="/delete-item" element={<DeleteItem />} />
         <Route path="/reservations" element={<Reservation />} />
       </Routes>
-
     </div>
   );
 }
