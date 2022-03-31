@@ -9,8 +9,6 @@ const DeleteItem = () => {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.items.items) || [];
 
-  console.log(items);
-
   useEffect(() => { dispatch(getItems); }, []);
 
   return (
