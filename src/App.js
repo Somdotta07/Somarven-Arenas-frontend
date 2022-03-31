@@ -8,6 +8,7 @@ import DetailsPage from './components/Details/DetailsPage';
 import ReservationForm from './components/Reservation/ReservationForm';
 import Reservation from './components/Reservation/Reservation';
 import NavBar from './components/NavBar';
+import DeleteItem from './components/DeleteItemPage/DeleteItem';
 
 function App() {
   const sessionDetails = useSelector((state) => state.sessions);
