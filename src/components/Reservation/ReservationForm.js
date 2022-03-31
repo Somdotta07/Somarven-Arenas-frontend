@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import reservedItems from '../../api/reservedItems';
 import 'react-datepicker/dist/react-datepicker.css';
-import './Reserve.css';
+import './Reserve.scss';
 
 const ReservationForm = () => {
   const items = useSelector((state) => state.items.items) || [];

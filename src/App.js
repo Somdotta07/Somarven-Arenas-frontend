@@ -1,6 +1,6 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-// import NavBar from './components/NavBar';
+import NavBar from './components/NavBar';
 // import Signin from './components/SignIn';
 // import SignUp from './components/SignUp';
 import Item from './components/Item';
@@ -14,7 +14,7 @@ import AddItem from './components/AddItem/AddItem';
 function App() {
   return (
     <div className="App">
-      {/* <NavBar /> */}
+      <NavBar />
       <div className="row">
         <div className="col-2 p-0">
           <VerticalNav />

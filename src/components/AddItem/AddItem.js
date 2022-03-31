@@ -17,7 +17,7 @@ const AddItem = () => {
   };
 
   return (
-    <div className="row">
+    <div className="row addItem">
       <div className="p-0 d-flex flex-column justify-content-center align-items-center">
         <form onSubmit={handleSubmit(onSubmit)} className="mt-5 mx-3">
           <input type="text" className="form-control m-1" id="name" placeholder="Enter Name" {...register('name')} />
