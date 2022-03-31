@@ -7,15 +7,15 @@ import {
   ListGroup,
   ListGroupItem,
 } from 'react-bootstrap';
-import getReserved from '../../api/reserved';
+import { deleteItemFromAPI, getItems } from '../../api/items';
 
 const EventCard = (props) => {
   const { item } = props;
   const dispatch = useDispatch();
 
   const deleteItem = (id) => {
-    dispatch(deleteReserve(id));
-    dispatch(getReserved());
+    dispatch(deleteItemFromAPI(id));
+    dispatch(getItems);
   };
 
   return (
@@ -34,7 +34,7 @@ const EventCard = (props) => {
           <ListGroupItem>{`$${item.price} / Day`}</ListGroupItem>
         </ListGroup>
         <Card.Body className="d-flex justify-content-center align-items-end">
-          <Button variant="danger" onChange={deleteItem(item.id)}>Delete</Button>
+          <Button variant="danger" onClick={deleteItem(item.id)}>Delete</Button>
         </Card.Body>
       </Card>
     </Col>
