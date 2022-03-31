@@ -7,7 +7,7 @@ import Item from './components/Item';
 import DetailsPage from './components/Details/DetailsPage';
 import ReservationForm from './components/Reservation/ReservationForm';
 import Reservation from './components/Reservation/Reservation';
-import DeleteItem from './components/Item/deleteItem';
+import DeleteItem from './components/DeleteItemPage/DeleteItem';
 // import AddItem from './components/AddItem';
 
 function App() {
