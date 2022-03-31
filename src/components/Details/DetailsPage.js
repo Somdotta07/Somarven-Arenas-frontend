@@ -1,11 +1,19 @@
-import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 import { BsFillArrowRightCircleFill, BsFillGearFill } from 'react-icons/bs';
 import './Details.css';
+import { getItemsDetails } from '../../api/items';
 
 const DetailsPage = () => {
-  const item = useSelector((state) => state.itemsDetailsReducer.items) || [];
+  const item = useSelector((state) => state.itemsDetailsReducer.items);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { id } = useParams();
+
+  useEffect(() => {
+    dispatch(getItemsDetails(id));
+  }, []);
 
   return (
     <div className="container mt-5">

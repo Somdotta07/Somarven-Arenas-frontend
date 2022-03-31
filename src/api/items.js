@@ -24,7 +24,7 @@ export const AddItemHandler = (data) => async (dispatch) => {
   formData.append('city', data.city);
   formData.append('capacity', data.capacity);
   formData.append('price', data.price);
-  await fetch('http://localhost:3000/api/v1/items/create', {
+  await fetch('http://localhost:3000/api/v1/items', {
     method: 'POST',
     body: formData,
   })
