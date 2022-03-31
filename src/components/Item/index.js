@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import './Item.css';
+import './item.css';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BsCaretRightFill, BsFillCaretLeftFill } from 'react-icons/bs';
@@ -10,16 +10,19 @@ import 'swiper/css';
 
 const Item = () => {
   const items = useSelector((state) => state.items.items) || [];
+  const sessionDetails = useSelector((state) => state.sessions);
+
+  const token = sessionDetails.user_token || JSON.parse(localStorage.getItem('token'));
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getItems);
+    dispatch(getItems(token));
   }, []);
   const navigate = useNavigate();
 
-  const renderDetailsPage = (id) => {
-    dispatch(getItemsDetails(id)).then(() => {
-      navigate(`/Details/${id}`);
+  const renderDetailsPage = (id, name) => {
+    dispatch(getItemsDetails(id, token)).then(() => {
+      navigate(`/Details/${name}`);
     });
   };
 
@@ -37,7 +40,7 @@ const Item = () => {
                 <Items
                   item={item}
                   onClick={() => {
-                    renderDetailsPage(item.id);
+                    renderDetailsPage(item.id, item.name);
                   }}
                 />
               </div>
