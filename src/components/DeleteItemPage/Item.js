@@ -1,5 +1,6 @@
+import React from 'react'
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   Button,
   Card,
@@ -7,15 +8,18 @@ import {
   ListGroup,
   ListGroupItem,
 } from 'react-bootstrap';
-import { deleteItemFromAPI, getItems } from '../../api/items';
+import { deleteItemFromAPI } from '../../api/items';
 
 const EventCard = (props) => {
   const { item } = props;
   const dispatch = useDispatch();
 
-  const deleteItem = async (id) => {
-    await dispatch(deleteItemFromAPI(id));
-    await dispatch(getItems);
+  const sessionDetails = useSelector((state) => state.sessions);
+
+  const token = sessionDetails.user_token || JSON.parse(localStorage.getItem('token'));
+
+  const deleteItem = (id) => {
+    dispatch(deleteItemFromAPI(id, token));
   };
 
   return (

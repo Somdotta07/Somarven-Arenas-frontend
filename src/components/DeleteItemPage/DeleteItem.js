@@ -9,7 +9,11 @@ const DeleteItem = () => {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.items.items) || [];
 
-  useEffect(() => { dispatch(getItems); }, []);
+  const sessionDetails = useSelector((state) => state.sessions);
+
+  const token = sessionDetails.user_token || JSON.parse(localStorage.getItem('token'));
+
+  useEffect(() => { dispatch(getItems(token)); }, []);
 
   return (
     <>

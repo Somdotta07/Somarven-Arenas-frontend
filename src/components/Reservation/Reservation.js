@@ -16,12 +16,16 @@ const Reservation = () => {
     const diffDays = Math.round(Math.abs((date2 - date1) / oneDay));
     return diffDays;
   };
+
+  const sessionDetails = useSelector((state) => state.sessions);
+
+  const token = sessionDetails.user_token || JSON.parse(localStorage.getItem('token'));
+
   useEffect(() => {
-    dispatch(getReserved());
+    dispatch(getReserved(token));
   }, []);
   const cancelReservation = (id) => {
-    dispatch(deleteReserve(id));
-    dispatch(getReserved());
+    dispatch(deleteReserve(id, token));
   };
 
   return (

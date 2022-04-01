@@ -16,8 +16,9 @@ export const getItemsDetails = (id, token) => async (dispatch) => {
     .then((res) => dispatch(fetchItemsDetails(res.data)));
 };
 
-export const deleteItemFromAPI = (id) => async (dispatch) => {
-  await axios.delete(`${BASE_URL}/${id}`)
+export const deleteItemFromAPI = (id, token) => async (dispatch) => {
+  await axios.delete(`${BASE_URL}/${id}`, { headers: { Authorization: token } })
     .then(() => ({ status: `Item#${id} Deleted successfully` }))
     .then((res) => dispatch(deleteItemFromState(res)));
+  dispatch(getItems(token));
 };

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import './item.css';
+import './Item.css';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BsCaretRightFill, BsFillCaretLeftFill } from 'react-icons/bs';
