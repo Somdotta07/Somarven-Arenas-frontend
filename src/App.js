@@ -7,8 +7,8 @@ import Item from './components/Item';
 import DetailsPage from './components/Details/DetailsPage';
 import ReservationForm from './components/Reservation/ReservationForm';
 import Reservation from './components/Reservation/Reservation';
-
 import NavBar from './components/NavBar';
+import DeleteItem from './components/DeleteItemPage/DeleteItem';
 
 function App() {
   const sessionDetails = useSelector((state) => state.sessions);
@@ -23,6 +23,7 @@ function App() {
         <Route exact path="/items" element={<Item />} />
         <Route path="/Details/:id" element={<DetailsPage />} />
         <Route path="/reserve" element={<ReservationForm />} />
+        <Route path="/delete-item" element={<DeleteItem />} />
         <Route path="/reservations" element={<Reservation />} />
         <Route path="/" element={sessionDetails.isSignIn || <SignIn />} />
       </Routes>
