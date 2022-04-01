@@ -1,5 +1,14 @@
+* {
+  margin: 0;
+}
+
 .App {
   text-align: center;
+  max-width: 99vw;
+}
+
+.sessions {
+  margin-top: 25vh;
 }
 
 .App-logo {
@@ -44,8 +53,8 @@
   list-style-type: none;
 }
 
-/* .card {
-  border-radius: 50% !important;
-} */
+.card {
+  border-radius: 50%;
+}
 
 /* Details page */

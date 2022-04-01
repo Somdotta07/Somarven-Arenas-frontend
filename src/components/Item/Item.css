@@ -3,6 +3,11 @@ aside {
   border-right: 3px solid lightgrey;
 }
 
+.item-cont {
+  margin: 0;
+  height: 100vh;
+}
+
 .sidebar-items {
   margin-top: 10vh;
 }
@@ -19,7 +24,7 @@ aside {
 
 .item-card-image {
   width: 200px;
-  height: auto;
+  height: 200px;
   border-radius: 50%;
 }
 
@@ -32,12 +37,17 @@ aside {
   font-size: small;
 }
 
+.item-card-description {
+  font-size: small;
+}
+
+
 .borderless {
   border: none !important;
 }
 
 .main-screen-subtitle {
-  margin-bottom: 100px;
+  margin-bottom: 30px;
 }
 
 .main-page-handle-left {

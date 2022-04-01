@@ -20,10 +20,7 @@ const Items = ({ item, onClick }) => {
         </div>
         <div className="card-body">
           <h4 className="card-title fw-bold">{name}</h4>
-          <p className="card-text text-muted item-card-description">
-            ............
-          </p>
-          <p className="card-text text-muted item-card-description">
+          <p className="card-text text-muted item-card-description description">
             {description}
           </p>
           <p className="card-text text-muted item-card-description">

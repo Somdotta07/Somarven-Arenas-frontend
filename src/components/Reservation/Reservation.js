@@ -20,22 +20,26 @@ const Reservation = () => {
     }
     return diffDays;
   };
+
+  const sessionDetails = useSelector((state) => state.sessions);
+
+  const token = sessionDetails.user_token || JSON.parse(localStorage.getItem('token'));
+
   useEffect(() => {
-    dispatch(getReserved());
+    dispatch(getReserved(token));
   }, []);
   const cancelReservation = (id) => {
-    dispatch(deleteReserve(id));
-    dispatch(getReserved());
+    dispatch(deleteReserve(id, token));
   };
 
   return (
     <>
-      {reservations.length > 0 && (
+      {reservations.length > 0 ? (
         <div>
           <div className=" reserved-h">
-            <h2 className="fw-bolder text-center my-5">Reserved Beautiful Arenas</h2>
+            <h2 className="fw-bolder text-center my-3">Reserved Beautiful Arenas</h2>
           </div>
-          <div className="d-flex flex-row justify-content-center">
+          <div className="d-flex flex-row justify-content-center tope">
             {reservations.map((reservation) => (
               <ul key={reservation.reservation.id}>
                 <li
@@ -80,14 +84,14 @@ const Reservation = () => {
                           </svg>
                           <p>
                             {' '}
-                            Start_Date:
+                            Start Date:
                             {' '}
                             {reservation.reservation.start_date}
 
                           </p>
                           <p>
                             {' '}
-                            End_Date:
+                            End Date:
                             {' '}
                             {reservation.reservation.end_date}
 
@@ -104,7 +108,7 @@ const Reservation = () => {
             ))}
           </div>
         </div>
-      )}
+      ) : <h2>Loading...</h2>}
       {reservations.length === 0 && (
       <div className="d-flex flex-column justify-content-center align-items-center wrapper  ">
         <div className="">

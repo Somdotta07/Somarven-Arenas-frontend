@@ -18,7 +18,7 @@ $orange: #ec992c;
 
 @mixin cardsOpen() {
   &::before {
-    background: rgba(10, 72, 112, 0.6);
+    background: #97bf11;
   }
 
   .book-container {
@@ -60,8 +60,7 @@ ul {
     display: flex;
     flex: 0 0 300px;
     flex-direction: column;
-    margin: 20px;
-    margin-bottom: 30px;
+    margin: 15px 15px 5px 15px;
 
     @include radius(10px);
 
@@ -84,7 +83,7 @@ ul {
     }
 
     .book-container {
-      height: 200px;
+      height: 80px;
 
       .content {
         position: relative;
@@ -111,7 +110,7 @@ ul {
           &:hover {
             background: white;
             border: 0 solid white;
-            color: $blue;
+            color: #97bf11;;
           }
         }
       }
