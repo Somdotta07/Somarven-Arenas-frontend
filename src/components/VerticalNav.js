@@ -9,7 +9,7 @@ const VerticalNav = () => {
   const [clickedIndex, setClickedIndex] = useState(0);
   return (
     <aside className="p-3 d-sm-block d-none">
-      <h1>Arenas</h1>
+      <h1 className="fw-bolder fst-italic">Arenas</h1>
       <div className="sidebar-items">
         <button type="button" onClick={() => { setClickedIndex(0); navigate('/'); }} className="bg-transparent borderless w-100 text-start">
           <h5 className={`${clickedIndex === 0 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>ARENAS</h5>
@@ -25,6 +25,9 @@ const VerticalNav = () => {
         </button>
         <button type="button" onClick={() => { setClickedIndex(4); navigate('/DeleteItem'); }} className="bg-transparent borderless w-100 text-start">
           <h5 className={`${clickedIndex === 4 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>DELETE </h5>
+        </button>
+        <button type="button" onClick={() => { setClickedIndex(5); navigate('/SignOut'); }} className="bg-transparent borderless w-100 text-start">
+          <h5 className={`${clickedIndex === 5 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>SIGN OUT</h5>
         </button>
       </div>
       <div className="sidebar-footer">

@@ -1,20 +1,25 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './item.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BsCaretRightFill, BsFillCaretLeftFill } from 'react-icons/bs';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Items from './Items';
-import { getItems, getItemsDetails } from '../../api/items';
+import { getItemsDetails } from '../../api/items';
 import 'swiper/css';
 
 const Item = () => {
   const items = useSelector((state) => state.items.items) || [];
   const dispatch = useDispatch();
+  const [width, setWidth] = useState(window.innerWidth);
 
+  const fixDimensions = () => {
+    setWidth(window.innerWidth);
+  };
   useEffect(() => {
-    dispatch(getItems);
-  }, []);
+    window.addEventListener('resize', fixDimensions);
+    return () => window.removeEventListener('resize', fixDimensions);
+  }, [items]);
   const navigate = useNavigate();
 
   const renderDetailsPage = (id) => {
@@ -30,7 +35,10 @@ const Item = () => {
         Select an Arena
       </p>
       <div className="row">
-        <Swiper spaceBetween={0}>
+        <Swiper
+          spaceBetween={0}
+          slidesPerView={width > 768 ? 3 : 1}
+        >
           {items.map((item) => (
             <SwiperSlide key={item.id}>
               <div className="d-flex justify-content-center">
@@ -46,16 +54,16 @@ const Item = () => {
           ...........
         </Swiper>
       </div>
-      <div className="d-sm-block d-none">
+      <div className="d-sm-block d-none bsfill">
         <button
           type="button"
-          className="borderless bg-trasparent"
+          className="borderless bg-trasparent leftfill"
           onClick={() => {
             const { swiper } = document.querySelector('.swiper');
             swiper.slidePrev();
           }}
         >
-          <div className="main-page-handle-left d-flex justify-content-center align-items-center">
+          <div className="main-page-handle-left d-flex justify-content-center align-items-center ">
             <BsFillCaretLeftFill />
           </div>
         </button>

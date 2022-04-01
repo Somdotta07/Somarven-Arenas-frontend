@@ -1,5 +1,7 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import NavBar from './components/NavBar';
 // import Signin from './components/SignIn';
 // import SignUp from './components/SignUp';
@@ -9,9 +11,14 @@ import ReservationForm from './components/Reservation/ReservationForm';
 import Reservation from './components/Reservation/Reservation';
 import VerticalNav from './components/VerticalNav';
 import AddItem from './components/AddItem/AddItem';
+import { getItems } from './api/items';
 // import DeleteItem from './components/DeleteItem';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getItems);
+  }, []);
   return (
     <div className="App">
       <NavBar />
