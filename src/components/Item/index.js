@@ -1,6 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './item.css';
+
 import { useEffect, useState } from 'react';
+
+import { useEffect } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import { BsCaretRightFill, BsFillCaretLeftFill } from 'react-icons/bs';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,6 +14,9 @@ import 'swiper/css';
 
 const Item = () => {
   const items = useSelector((state) => state.items.items) || [];
+  const sessionDetails = useSelector((state) => state.sessions);
+
+  const token = sessionDetails.user_token || JSON.parse(localStorage.getItem('token'));
   const dispatch = useDispatch();
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -17,14 +24,19 @@ const Item = () => {
     setWidth(window.innerWidth);
   };
   useEffect(() => {
+
     window.addEventListener('resize', fixDimensions);
     return () => window.removeEventListener('resize', fixDimensions);
   }, [items]);
+
+    dispatch(getItems(token));
+  }, []);
+
   const navigate = useNavigate();
 
-  const renderDetailsPage = (id) => {
-    dispatch(getItemsDetails(id)).then(() => {
-      navigate(`/Details/${id}`);
+  const renderDetailsPage = (id, name) => {
+    dispatch(getItemsDetails(id, token)).then(() => {
+      navigate(`/Details/${name}`);
     });
   };
 
@@ -45,7 +57,7 @@ const Item = () => {
                 <Items
                   item={item}
                   onClick={() => {
-                    renderDetailsPage(item.id);
+                    renderDetailsPage(item.id, item.name);
                   }}
                 />
               </div>
