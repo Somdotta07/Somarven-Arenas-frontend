@@ -2,10 +2,30 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
+import styled from 'styled-components';
 import { getItems } from '../../api/items';
+import Modal from './Modal';
 import reservedItems from '../../api/reservedItems';
 import 'react-datepicker/dist/react-datepicker.css';
+import GlobalStyle from './globalStyles';
 import './Reserve.scss';
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;
+const Button = styled.button`
+  min-width: 100px;
+  padding: 16px 32px;
+  border-radius: 4px;
+  border: none;
+  background: #141414;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+`;
 
 const ReservationForm = () => {
   const items = useSelector((state) => state.items.items) || [];
@@ -13,6 +33,10 @@ const ReservationForm = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [loginResponse, setLoginResponse] = useState('');
+  const [showModal, setShowModal] = useState(false);
+  const openModal = () => {
+    setShowModal((prev) => !prev);
+  };
   const dispatch = useDispatch();
 
   const token = JSON.parse(localStorage.getItem('token'));
@@ -73,11 +97,15 @@ const ReservationForm = () => {
           <div className="d-flex justify-content-center w-100 mt-3">
             <DatePicker selected={endDate} onChange={(date) => setEndDate(date)} />
           </div>
-          <div className="d-flex w-100 justify-content-center pt-5">
-            <button className="btn btn-outline-success rounded-pill" type="submit">Reserve</button>
-          </div>
+          <Container>
+            <Button onClick={openModal}>modal</Button>
+            <Modal showModal={showModal} setShowModal={setShowModal} />
+            <GlobalStyle />
+          </Container>
+
         </section>
       </form>
+
     </div>
   );
 };
