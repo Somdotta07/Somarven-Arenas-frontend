@@ -34,13 +34,13 @@ export const handleSignIn = (username, password) => async (dispatch) => {
     headers: {
       'Content-Type': 'application/json',
     },
+    mode: 'cors',
   });
   const response = await user.json();
   if (response.status === 200) {
     const token = user.headers.get('Authorization');
     dispatch(userSignIn(true, response, token));
     localStorage.setItem('token', JSON.stringify(user.headers.get('Authorization')));
-    // console.log(user.headers.get('Authorization'));
   }
 };
 

@@ -2,6 +2,20 @@
   margin-top: 10vh;
 }
 
+aside {
+  height: 100vh;
+  border-right: 3px solid lightgrey;
+}
+
+.item-cont {
+  margin: 0;
+  height: 100vh;
+}
+
+.sidebar-items {
+  margin-top: 10vh;
+}
+
 .sidebar-footer {
   position: absolute;
   bottom: 20px;
@@ -14,7 +28,8 @@
 
 .item-card-image {
   width: 200px;
-  height: auto;
+  height: 200px;
+  border-radius: 50%;
 }
 
 .card-icon-circle {
@@ -26,12 +41,17 @@
   font-size: small;
 }
 
+.item-card-description {
+  font-size: small;
+}
+
+
 .borderless {
   border: none !important;
 }
 
 .main-screen-subtitle {
-  margin-bottom: 100px;
+  margin-bottom: 30px;
 }
 
 .main-page-handle-left {
@@ -42,7 +62,7 @@
   height: 50px;
   font-size: 20px;
   color: white;
-  background-color: lightgrey;
+  background-color: #97bf11;
   border-top-right-radius: 100%;
   border-bottom-right-radius: 100%;
 }
@@ -60,4 +80,8 @@
   font-size: 20px;
   border-bottom-left-radius: 100%;
   border-top-left-radius: 100%;
+}
+
+.leftfill {
+  margin-right: 100% !important;
 }

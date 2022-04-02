@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 import itemsReducer from './items/items';
 import itemsDetailsReducer from './items/ItemDetails';
 import reservationsReducer from './reservations/reservation';
+import addItemReducer from './items/AddItem';
 import deleteReservedReducer from './reservations/deleteReserved';
 import usersReducer from './users/users';
 import sessionsReducer from './signin/login';
@@ -15,5 +16,6 @@ const reducers = combineReducers({
   itemsDetailsReducer,
   usersReducer,
   deleteReservedReducer,
+  addItemReducer,
 });
 export default createStore(reducers, applyMiddleware(thunk, logger));

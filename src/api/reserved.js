@@ -7,7 +7,6 @@ const token = JSON.parse(localStorage.getItem('token'));
 
 const getReserved = () => async (dispatch) => {
   const response = await axios.get(BASE_URL, { headers: { Authorization: token } });
-  console.log(response.data.data);
   dispatch(fetchReservations(response.data.data));
 };
 

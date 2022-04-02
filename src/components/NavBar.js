@@ -11,7 +11,7 @@ function NavBar() {
   };
   return (
     <>
-      <Navbar collapseOnSelect fixed="top" expand="sm" bg="dark" variant="dark">
+      <Navbar collapseOnSelect fixed="top" expand="sm" bg="dark" variant="dark" className="d-lg-block d-xl-none">
         <Container>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" data-bs-target="#responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -25,7 +25,6 @@ function NavBar() {
               <Nav.Link href="/delete-item">DeleteItem</Nav.Link>
               <Nav.Link href="/additem">AddItem</Nav.Link>
               <Nav.Link href="/" onClick={() => signOut()}>Sign Out</Nav.Link>
-              {/* <button type="submit" onClick={() => signOut()}>Sign Out</button> */}
             </Nav>
           </Navbar.Collapse>
         </Container>

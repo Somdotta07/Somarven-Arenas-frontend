@@ -1,9 +1,33 @@
+.details-info {
+   margin-top: 20%;
+}
+
 .reserve {
   background-color: #97bf11;
   border-radius: 25px;
 }
+.reserve-div {
+  margin-top: 40px;
+}
+.reserve-btn {
+  background-color: #97bf11 !important;
+  border: none !important;
+  color:white !important;
+  font-size: larger!important;
+  font-weight: 800!important;
+}
 
-.btn {
+.details-fill {
+  z-index: 100;
+  top: 50vh;
+  float: left;
+  width: 60px;
+  height: 50px;
   background-color: #97bf11;
-  border: 0;
+  color: white;
+  font-size: 20px;
+  border-bottom-left-radius: 100%;
+  border-top-left-radius: 100%;
+  margin-top: 10% !important;
+  margin-left: -25%;
 }

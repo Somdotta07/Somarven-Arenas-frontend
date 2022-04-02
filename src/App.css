@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+}
+
 .App {
   text-align: center;
 }
@@ -51,5 +55,3 @@
 .card {
   border-radius: 50%;
 }
-
-/* Details page */

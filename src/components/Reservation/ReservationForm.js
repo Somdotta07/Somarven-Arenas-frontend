@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
+import { getItems } from '../../api/items';
 import reservedItems from '../../api/reservedItems';
 import 'react-datepicker/dist/react-datepicker.css';
-import './Reserve.css';
+import './Reserve.scss';
 
 const ReservationForm = () => {
   const items = useSelector((state) => state.items.items) || [];
@@ -12,6 +13,12 @@ const ReservationForm = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [loginResponse, setLoginResponse] = useState('');
+  const dispatch = useDispatch();
+
+  const token = JSON.parse(localStorage.getItem('token'));
+  useEffect(() => {
+    dispatch(getItems(token));
+  }, []);
 
   const getItemId = () => {
     if (location.state) {
@@ -28,10 +35,6 @@ const ReservationForm = () => {
 
   const reserveSubmit = async (e) => {
     e.preventDefault();
-    // if (!user.id) {
-    //   setLoginResponse('Please Sign in');
-    //   return;
-    // }
     const response = await reservedItems({
       start_date: startDate,
       end_date: endDate,
