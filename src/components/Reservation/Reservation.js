@@ -38,7 +38,7 @@ const Reservation = () => {
           <div className=" reserved-h">
             <h2 className="fw-bolder text-center my-3">Reserved Beautiful Arenas</h2>
           </div>
-          <div className="d-flex flex-row justify-content-center tope">
+          <div className="d-flex flex-row justify-content-center">
             {reservations.map((reservation) => (
               <ul key={reservation.reservation.id}>
                 <li

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { handleSignUp } from '../../redux/signin/login';
+import loginImg from './login.png';
 
 const SignUp = () => {
   const [userName, setUserName] = useState('');
@@ -18,9 +19,13 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-      <form>
-        <label htmlFor="username" id="username">Username</label>
+    <div className="signedIn">
+      <div className="loginImage">
+        <img src={loginImg} width="300" style={{ position: 'relative' }} alt="login" />
+      </div>
+      <form className="loginform">
+        <h3 className="headerTitle">Sign Up</h3>
+        {/* <label htmlFor="username" id="username">Username</label> */}
         <input
           type="text"
           name="username"
@@ -30,7 +35,7 @@ const SignUp = () => {
           placeholder="User Name"
           onChange={(e) => setUserName(e.target.value)}
         />
-        <label htmlFor="email" id="email">Email</label>
+        {/* <label htmlFor="email" id="email">Email</label> */}
         <input
           type="email"
           name="email"
@@ -40,7 +45,7 @@ const SignUp = () => {
           placeholder="Enter an email"
           onChange={(e) => setEmail(e.target.value)}
         />
-        <label htmlFor="password" id="password">Enter Password</label>
+        {/* <label htmlFor="password" id="password">Enter Password</label> */}
         <input
           type="password"
           name="password"
@@ -50,12 +55,14 @@ const SignUp = () => {
           placeholder="Password must be greater than 6 characters"
           onChange={(e) => setPassword(e.target.value)}
         />
+        <button type="submit" className="submit-btn sign" onClick={(e) => signUpUser(e)}>Sign Up</button>
+
       </form>
       <div>
         <h4>Existing User?</h4>
         <Link to="/">Sign in here</Link>
       </div>
-      <button type="submit" className="submit-btn" onClick={(e) => signUpUser(e)}>Sign Up</button>
+
     </div>
   );
 };

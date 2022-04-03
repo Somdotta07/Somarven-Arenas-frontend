@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import NavBar from './components/NavBar';
 import SignIn from './components/Sessions/SignIn';
 import SignUp from './components/Sessions/SignUp';
 import Item from './components/Item';
@@ -16,6 +17,7 @@ function App() {
   const sessionDetails = useSelector((state) => state.sessions);
   return (
     <div className="App">
+      <NavBar />
       <div className="row">
         <div className="col-2 p-0">
           <VerticalNav />
