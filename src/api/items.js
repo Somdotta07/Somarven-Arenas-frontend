@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { fetchItems } from '../redux/items/items';
-import { fetchItemsDetails } from '../redux/items/ItemDetails';
+import { fetchItemsDetails, fetchReservationDates } from '../redux/items/ItemDetails';
 import { addItem } from '../redux/items/AddItem';
 import { deleteItemFromState } from '../redux/items/deleteItemReducer';
 
@@ -17,18 +17,18 @@ export const getItemsDetails = (id, token) => async (dispatch) => {
     .then((res) => dispatch(fetchItemsDetails(res.data)));
 };
 
-export const AddItemHandler = (data) => async (dispatch) => {
-  const token = JSON.parse(localStorage.getItem('token'));
-  const formData = new FormData();
-  formData.append('name', data.name);
-  formData.append('image', data.image);
-  formData.append('description', data.description);
-  formData.append('city', data.city);
-  formData.append('capacity', data.capacity);
-  formData.append('price', data.price);
+export const getReservationDates = (id, token) => async (dispatch) => {
+  fetch(`http://127.0.0.1:3000/api/v1/itemreservations/${id} `, { headers: { Authorization: token } })
+    .then((response) => response.json())
+    .then((res) => dispatch(fetchReservationDates(res.data)));
+};
+
+export const AddItemHandler = (item, token) => async (dispatch) => {
+  const newItem = { item };
+  console.log(newItem);
   await fetch('http://localhost:3000/api/v1/items', {
     method: 'POST',
-    body: formData,
+    body: JSON.stringify(newItem),
     headers: {
       'Content-Type': 'application/json',
       Authorization: token,

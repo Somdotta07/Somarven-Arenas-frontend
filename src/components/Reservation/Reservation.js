@@ -28,6 +28,7 @@ const Reservation = () => {
   useEffect(() => {
     dispatch(getReserved(token));
   }, []);
+
   const cancelReservation = (id) => {
     dispatch(deleteReserve(id, token));
   };
