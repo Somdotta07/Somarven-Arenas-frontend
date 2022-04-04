@@ -34,11 +34,11 @@ const Reservation = () => {
   return (
     <>
       {reservations.length > 0 ? (
-        <div>
+        <div className="d-flex flex-column justify-content-center">
           <div className=" reserved-h">
             <h2 className="fw-bolder text-center my-3">Reserved Beautiful Arenas</h2>
           </div>
-          <div className="d-flex flex-row justify-content-center">
+          <div className="d-flex flex-row flex-wrap justify-content-center  w-70">
             {reservations.map((reservation) => (
               <ul key={reservation.reservation.id}>
                 <li
