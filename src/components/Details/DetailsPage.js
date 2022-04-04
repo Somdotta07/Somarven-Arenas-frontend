@@ -12,8 +12,8 @@ const DetailsPage = () => {
   const modal = useSelector((state) => state.itemsDetailsReducer.isModalOpen);
   const dispatch = useDispatch();
   const { id } = useParams();
-  const token = JSON.parse(localStorage.getItem('token'));
   useEffect(() => {
+    const token = JSON.parse(localStorage.getItem('token'));
     dispatch(getItemsDetails(id, token));
     dispatch(getReservationDates(id, token));
   }, []);

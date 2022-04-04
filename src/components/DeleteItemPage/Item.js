@@ -22,7 +22,7 @@ const EventCard = (props) => {
 
   const deleteItem = (id) => {
     dispatch(deleteItemFromAPI(id, token));
-    navigate('/DeleteItem');
+    navigate('/delete-item');
   };
 
   return (
