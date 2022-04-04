@@ -25,7 +25,7 @@ const SignUp = () => {
       </div>
       <form className="loginform">
         <h3 className="headerTitle">Sign Up</h3>
-        {/* <label htmlFor="username" id="username">Username</label> */}
+        
         <input
           type="text"
           name="username"
@@ -35,7 +35,7 @@ const SignUp = () => {
           placeholder="User Name"
           onChange={(e) => setUserName(e.target.value)}
         />
-        {/* <label htmlFor="email" id="email">Email</label> */}
+        
         <input
           type="email"
           name="email"
@@ -45,7 +45,7 @@ const SignUp = () => {
           placeholder="Enter an email"
           onChange={(e) => setEmail(e.target.value)}
         />
-        {/* <label htmlFor="password" id="password">Enter Password</label> */}
+      
         <input
           type="password"
           name="password"
@@ -62,7 +62,6 @@ const SignUp = () => {
         <h4>Existing User?</h4>
         <Link to="/">Sign in here</Link>
       </div>
-
     </div>
   );
 };

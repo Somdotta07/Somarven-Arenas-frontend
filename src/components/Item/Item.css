@@ -1,3 +1,13 @@
+aside {
+  height: 100vh;
+  border-right: 3px solid lightgrey;
+}
+
+.item-cont {
+  margin: 0;
+  height: 100vh;
+}
+
 .sidebar-items {
   margin-top: 10vh;
 }

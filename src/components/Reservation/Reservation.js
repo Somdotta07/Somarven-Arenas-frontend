@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './Reserve.scss';
@@ -27,6 +28,7 @@ const Reservation = () => {
   useEffect(() => {
     dispatch(getReserved(token));
   }, []);
+
   const cancelReservation = (id) => {
     dispatch(deleteReserve(id, token));
   };

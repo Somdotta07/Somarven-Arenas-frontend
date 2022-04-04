@@ -2,6 +2,24 @@
    margin-top: 20%;
 }
 
+<<<<<<< HEAD
+=======
+.sodal {
+  width: 80vw;
+  height: 50vh;
+  position: absolute;
+  background-color: #fff;
+  z-index: 200000;
+  border-radius: 8px;
+  top: 25vh;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid blue;
+  box-shadow: 0 2px 10px black;
+}
+  
+
+>>>>>>> e747b2c5fea81ad5d54719cea73542ab528c583b
 .reserve {
   background-color: #97bf11;
   border-radius: 25px;
