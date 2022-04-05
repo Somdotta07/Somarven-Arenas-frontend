@@ -6,7 +6,7 @@ const SIGN_OUT = 'store/log_in/USER_SIGN_OUT';
 
 const initialState = {
   isSignUp: false,
-  isSignIn: false,
+  isSignIn: !!getToken(),
   message: '',
   user_token: '',
 };
