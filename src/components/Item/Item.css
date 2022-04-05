@@ -1,20 +1,8 @@
 aside {
   height: 100vh;
   border-right: 3px solid lightgrey;
-}
-
-.item-cont {
-  margin: 0;
-  height: 100vh;
-}
-
-.sidebar-items {
-  margin-top: 10vh;
-}
-
-aside {
-  height: 100vh;
-  border-right: 3px solid lightgrey;
+  width: 300px;
+  position: fixed;
 }
 
 .item-cont {
@@ -50,11 +38,6 @@ aside {
 .item-card-description {
   font-size: small;
 }
-
-.item-card-description {
-  font-size: small;
-}
-
 
 .borderless {
   border: none !important;
@@ -93,5 +76,5 @@ aside {
 }
 
 .leftfill {
-  margin-right: 100% !important;
+  margin-right: 98% !important;
 }

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FaFacebookF, FaGooglePlus } from 'react-icons/fa';
 import { GrPinterest } from 'react-icons/gr';
 import { BsTwitter, BsVimeo } from 'react-icons/bs';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { handleSignOut } from '../redux/signin/login';
 
@@ -21,13 +21,26 @@ const SideNav = () => {
     <aside className="p-3 d-sm-block d-none">
       <h1 className="fw-bolder fst-italic">Somar Arenas</h1>
       <div className="sidebar-items">
-        <Link to="/signup" onClick={() => { setClickedIndex('signup'); }} className={`${clickedIndex === 'signup' && 'sidebar-item-active '} py-2 fw-bold ps-2`}>Sign up</Link>
-        <Link to="/items" onClick={() => { setClickedIndex('items'); }} className={`${clickedIndex === 'items' && 'sidebar-item-active '} py-2 fw-bold ps-2`}>Items</Link>
-        <Link to="/reserve" onClick={() => { setClickedIndex('reserve'); }} className={`${clickedIndex === 'reserve' && 'sidebar-item-active '} py-2 fw-bold ps-2`}>Reserve</Link>
-        <Link to="/reservations" onClick={() => { setClickedIndex('reservations'); }} className={`${clickedIndex === 'reservations' && 'sidebar-item-active '} py-2 fw-bold ps-2`}>My Reservations</Link>
-        <Link to="/delete-item" onClick={() => { setClickedIndex('delete-item'); }} className={`${clickedIndex === 'delete-item' && 'sidebar-item-active '} py-2 fw-bold ps-2`}>Delete Item</Link>
-        <Link to="/additem" onClick={() => { setClickedIndex('additem'); }} className={`${clickedIndex === 'additem' && 'sidebar-item-active '} py-2 fw-bold ps-2`}>AddItem</Link>
-        <button type="button" onClick={() => signOut()}>Sign Out</button>
+        <button type="button" onClick={() => { setClickedIndex('items'); navigate('/items'); }} className="bg-transparent borderless w-100 text-start">
+          <h5 className={`${clickedIndex === 0 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>ARENAS</h5>
+        </button>
+        <button type="button" onClick={() => { setClickedIndex('reserve'); navigate('/reserve'); }} className="bg-transparent borderless w-100 text-start">
+          <h5 className={`${clickedIndex === 1 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>RESERVE</h5>
+        </button>
+        <button type="button" onClick={() => { setClickedIndex('reservation'); navigate('/reservations'); }} className="bg-transparent borderless w-100 text-start">
+          <h5 className={`${clickedIndex === 2 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>MY RESERVATIONS </h5>
+        </button>
+        <button type="button" onClick={() => { setClickedIndex('additem'); navigate('/additem'); }} className="bg-transparent borderless w-100 text-start">
+          <h5 className={`${clickedIndex === 3 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>ADD ARENAS</h5>
+        </button>
+        <button type="button" onClick={() => { setClickedIndex('deleteitem'); navigate('/delete-item'); }} className="bg-transparent borderless w-100 text-start">
+          <h5 className={`${clickedIndex === 4 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>DELETE </h5>
+        </button>
+
+        <button type="button" onClick={() => signOut()} className="bg-transparent borderless w-100 text-start">
+          <h5 className={`${clickedIndex === 5 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>SIGN OUT</h5>
+
+        </button>
       </div>
       <div className="sidebar-footer">
         <div className="sidebar-icons">

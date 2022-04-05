@@ -8,7 +8,7 @@ import Items from './Items';
 import { getItems, getItemsDetails } from '../../api/items';
 import 'swiper/css';
 import { getToken } from '../../utils/sessionHelper';
-
+import SideNav from '../SideNav';
 
 const Item = () => {
   const items = useSelector((state) => state.items.items) || [];
@@ -37,61 +37,66 @@ const Item = () => {
   };
 
   return (
-    <div className="item-cont">
-      <h1 className="fw-bolder text-center my-3">Beautiful Arenas</h1>
-      <p className="text-muted text-center main-screen-subtitle">
-        Please Select an Arena
-      </p>
-      { items.length > 0 ? (
-        <>
-          <div className="row">
-            <Swiper
-              spaceBetween={0}
-              slidesPerView={width > 768 ? 3 : 1}
-            >
-              {items.map((item) => (
-                <SwiperSlide key={item.id}>
-                  <div className="d-flex justify-content-center">
-                    <Items
-                      item={item}
-                      onClick={() => {
-                        renderDetailsPage(item.id, item.name);
-                      }}
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-              ...........
-            </Swiper>
-          </div>
-          <div className="d-sm-block d-none bsfill">
-            <button
-              type="button"
-              className="borderless bg-trasparent leftfill"
-              onClick={() => {
-                const { swiper } = document.querySelector('.swiper');
-                swiper.slidePrev();
-              }}
-            >
-              <div className="main-page-handle-left d-flex justify-content-center align-items-center ">
-                <BsFillCaretLeftFill />
-              </div>
-            </button>
-            <button
-              type="button"
-              className="borderless bg-transparent"
-              onClick={() => {
-                const { swiper } = document.querySelector('.swiper');
-                swiper.slideNext();
-              }}
-            >
-              <div className="main-page-handle-right d-flex  justify-content-center align-items-center">
-                <BsCaretRightFill />
-              </div>
-            </button>
-          </div>
-        </>
-      ) : <h2>Loading....</h2> }
+    <div className="item-cont row">
+      <div className="col-2 p-0">
+        <SideNav />
+      </div>
+      <div className="col-md-10 col-sm-12 ">
+        <h1 className="fw-bolder text-center my-3">Beautiful Arenas</h1>
+        <p className="text-muted text-center main-screen-subtitle">
+          Please Select an Arena
+        </p>
+        { items.length > 0 ? (
+          <>
+            <div className="row">
+              <Swiper
+                spaceBetween={0}
+                slidesPerView={width > 768 ? 3 : 1}
+              >
+                {items.map((item) => (
+                  <SwiperSlide key={item.id}>
+                    <div className="d-flex justify-content-center">
+                      <Items
+                        item={item}
+                        onClick={() => {
+                          renderDetailsPage(item.id, item.name);
+                        }}
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
+                ...........
+              </Swiper>
+            </div>
+            <div className="d-sm-block d-none bsfill">
+              <button
+                type="button"
+                className="borderless bg-trasparent leftfill"
+                onClick={() => {
+                  const { swiper } = document.querySelector('.swiper');
+                  swiper.slidePrev();
+                }}
+              >
+                <div className="main-page-handle-left d-flex justify-content-center align-items-center ">
+                  <BsFillCaretLeftFill />
+                </div>
+              </button>
+              <button
+                type="button"
+                className="borderless bg-transparent"
+                onClick={() => {
+                  const { swiper } = document.querySelector('.swiper');
+                  swiper.slideNext();
+                }}
+              >
+                <div className="main-page-handle-right d-flex  justify-content-center align-items-center">
+                  <BsCaretRightFill />
+                </div>
+              </button>
+            </div>
+          </>
+        ) : <h2>Loading....</h2> }
+      </div>
     </div>
   );
 };

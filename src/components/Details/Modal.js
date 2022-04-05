@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import reservedItems from '../../api/reservedItems';
 import 'react-datepicker/dist/react-datepicker.css';
 import './Details.css';
+import { controlModal } from '../../redux/items/ItemDetails';
 
 const Modal = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [loginResponse, setLoginResponse] = useState('');
   const { id, name } = useParams();
+  const dispatch = useDispatch();
 
   const user = useSelector((state) => state.usersReducer.user);
   const reservedDates = useSelector((state) => state.itemsDetailsReducer.dates);
@@ -31,8 +33,6 @@ const Modal = () => {
     });
   });
 
-  console.log(tope);
-
   const reserveSubmit = async (e) => {
     e.preventDefault();
     const response = await reservedItems({
@@ -47,9 +47,15 @@ const Modal = () => {
       setLoginResponse(response.error);
     }
   };
+  // const closeModal = () => {
+  //   dispatch(toggleModal);
+  // };
 
   return (
     <div className="wrapper sodal">
+      <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={() => dispatch(controlModal(false))}>
+        <span>&times;</span>
+      </button>
       <form className="d-flex flex-column h-100 justify-content-center align-items-center " onSubmit={reserveSubmit}>
         <section>
           <span>
@@ -63,7 +69,7 @@ const Modal = () => {
               <option value={id}>
                 {name}
               </option>
-              ))
+
             </select>
           </div>
           <div className="d-flex justify-content-center w-100 mt-3">

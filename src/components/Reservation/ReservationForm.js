@@ -7,6 +7,7 @@ import reservedItems from '../../api/reservedItems';
 import 'react-datepicker/dist/react-datepicker.css';
 import './Reserve.scss';
 import { getToken } from '../../utils/sessionHelper';
+import SideNav from '../SideNav';
 
 const ReservationForm = () => {
   const items = useSelector((state) => state.items.items) || [];
@@ -50,35 +51,40 @@ const ReservationForm = () => {
   };
 
   return (
-    <div className="wrapper">
-      <form className="d-flex flex-column h-100 justify-content-center align-items-center " onSubmit={reserveSubmit}>
-        <section>
-          <span>
-            {loginResponse}
-          </span>
-          <div className="d-flex flex-column justify-content-center text-white">
-            <h2 className="text-center">Reserve an Arena</h2>
-          </div>
-          <div className="d-flex">
-            <select className="form-select me-2 rounded-pill" onChange={(e) => setItemId(e.target.value)} value={itemId}>
-              {items.map((item) => (
-                <option key={item.id} value={item.id}>
-                  {item.name}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="d-flex justify-content-center w-100 mt-3">
-            <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
-          </div>
-          <div className="d-flex justify-content-center w-100 mt-3">
-            <DatePicker selected={endDate} onChange={(date) => setEndDate(date)} />
-          </div>
-          <div className="d-flex w-100 justify-content-center pt-5">
-            <button className="btn btn-outline-success rounded-pill" type="submit">Reserve</button>
-          </div>
-        </section>
-      </form>
+    <div className="wrapper row">
+      <div className="col-2 p-0">
+        <SideNav />
+      </div>
+      <div className="col-md-10 col-sm-12">
+        <form className="d-flex flex-column h-100 justify-content-center align-items-center " onSubmit={reserveSubmit}>
+          <section>
+            <span>
+              {loginResponse}
+            </span>
+            <div className="d-flex flex-column justify-content-center text-white">
+              <h2 className="text-center">Reserve an Arena</h2>
+            </div>
+            <div className="d-flex">
+              <select className="form-select me-2 rounded-pill" onChange={(e) => setItemId(e.target.value)} value={itemId}>
+                {items.map((item) => (
+                  <option key={item.id} value={item.id}>
+                    {item.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="d-flex justify-content-center w-100 mt-3">
+              <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+            </div>
+            <div className="d-flex justify-content-center w-100 mt-3">
+              <DatePicker selected={endDate} onChange={(date) => setEndDate(date)} />
+            </div>
+            <div className="d-flex w-100 justify-content-center pt-5">
+              <button className="btn btn-outline-success rounded-pill" type="submit">Reserve</button>
+            </div>
+          </section>
+        </form>
+      </div>
     </div>
   );
 };

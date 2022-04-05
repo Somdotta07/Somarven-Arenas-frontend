@@ -1,3 +1,5 @@
+/* stylelint-disable at-rule-no-unknown */
+
 $font : 'Sofia', sans-serif;
 $font-size:16px;
 $blue : #0a4870;
@@ -111,7 +113,7 @@ ul {
           &:hover {
             background: white;
             border: 0 solid white;
-            color: #97bf11;;
+            color: #97bf11;
           }
         }
       }
@@ -226,3 +228,4 @@ ul {
 h1 {
   margin: 10px 20px;
 }
+/* stylelint-enable at-rule-no-unknown */

@@ -1,9 +1,7 @@
 .details-info {
-   margin-top: 20%;
+  margin-top: 20%;
 }
 
-<<<<<<< HEAD
-=======
 .sodal {
   width: 80vw;
   height: 50vh;
@@ -17,22 +15,22 @@
   border: 1px solid blue;
   box-shadow: 0 2px 10px black;
 }
-  
 
->>>>>>> e747b2c5fea81ad5d54719cea73542ab528c583b
 .reserve {
   background-color: #97bf11;
   border-radius: 25px;
 }
+
 .reserve-div {
   margin-top: 40px;
 }
+
 .reserve-btn {
   background-color: #97bf11 !important;
   border: none !important;
-  color:white !important;
-  font-size: larger!important;
-  font-weight: 800!important;
+  color: white !important;
+  font-size: larger !important;
+  font-weight: 800 !important;
 }
 
 .details-fill {
