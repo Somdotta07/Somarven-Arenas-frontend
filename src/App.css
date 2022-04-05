@@ -11,10 +11,6 @@
   margin-top: 25vh;
 }
 
-.sessions {
-  margin-top: 25vh;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -62,13 +58,11 @@
 }
 
 .signedIn {
-  background: rgb(34,193,195);
-  background: linear-gradient(135deg, rgba(34,193,195,1) 0%,     rgba(253,187,45,1) 100%);
-  font-family: "work sans";
+  background: rgb(34, 193, 195);
+  background: linear-gradient(135deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+  font-family: "work sans", sans-serif;
   padding-top: 5%;
-  /* height: 50vh; */
 }
-
 
 .loginform {
   display: flex;
@@ -79,10 +73,10 @@
   width: 30%;
   height: 60%;
   margin: 100px auto;
-  background-color: #FFFFFF;
+  background-color: #fff;
   border-radius: 25px;
   margin-top: 1%;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
 }
 
 .headerTitle {
@@ -93,7 +87,9 @@
   font-size: 2rem;
 }
 
-.username, .email, .password {
+.username,
+.email,
+.password {
   border-radius: 10px;
   padding: 2%;
   margin: 3%;
@@ -108,20 +104,19 @@
   font-size: 1.3rem;
   color: white;
   font-weight: 700;
-  background: rgb(34,193,195);
-  background: linear-gradient(90deg, rgba(34,193,195,1) 0%,     rgba(253,187,45,1) 100%);
-  border: 0px;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(90deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+  border: 0;
   cursor: pointer;
   transition: opacity 0.25s ease-out;
   margin: 5%;
   margin-left: 12%;
 }
 
-.sign:hover{
+.sign:hover {
   opacity: 0.8;
 }
 
 .loginImage {
   margin-top: 10%;
 }
-
