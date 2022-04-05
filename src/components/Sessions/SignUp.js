@@ -25,7 +25,7 @@ const SignUp = () => {
       </div>
       <form className="loginform">
         <h3 className="headerTitle">Sign Up</h3>
-        
+
         <input
           type="text"
           name="username"
@@ -35,7 +35,7 @@ const SignUp = () => {
           placeholder="User Name"
           onChange={(e) => setUserName(e.target.value)}
         />
-        
+
         <input
           type="email"
           name="email"
@@ -45,7 +45,7 @@ const SignUp = () => {
           placeholder="Enter an email"
           onChange={(e) => setEmail(e.target.value)}
         />
-      
+
         <input
           type="password"
           name="password"
