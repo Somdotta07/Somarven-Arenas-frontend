@@ -6,6 +6,7 @@ import { getItems } from '../../api/items';
 import reservedItems from '../../api/reservedItems';
 import 'react-datepicker/dist/react-datepicker.css';
 import './Reserve.scss';
+import { getToken } from '../../utils/sessionHelper';
 
 const ReservationForm = () => {
   const items = useSelector((state) => state.items.items) || [];
@@ -14,8 +15,8 @@ const ReservationForm = () => {
   const [endDate, setEndDate] = useState(new Date());
   const [loginResponse, setLoginResponse] = useState('');
   const dispatch = useDispatch();
+  const token = getToken();
 
-  const token = JSON.parse(localStorage.getItem('token'));
   useEffect(() => {
     dispatch(getItems(token));
   }, []);
@@ -35,10 +36,6 @@ const ReservationForm = () => {
 
   const reserveSubmit = async (e) => {
     e.preventDefault();
-    // if (!user.id) {
-    //   setLoginResponse('Please Sign in');
-    //   return;
-    // }
     const response = await reservedItems({
       start_date: startDate,
       end_date: endDate,

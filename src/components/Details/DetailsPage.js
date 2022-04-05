@@ -6,6 +6,7 @@ import Modal from './Modal';
 import './Details.css';
 import { getItemsDetails, getReservationDates } from '../../api/items';
 import { controlModal } from '../../redux/items/ItemDetails';
+import { getToken } from '../../utils/sessionHelper';
 
 const DetailsPage = () => {
   const item = useSelector((state) => state.itemsDetailsReducer.items);
@@ -13,7 +14,7 @@ const DetailsPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   useEffect(() => {
-    const token = JSON.parse(localStorage.getItem('token'));
+    const token = getToken();
     dispatch(getItemsDetails(id, token));
     dispatch(getReservationDates(id, token));
   }, []);
@@ -37,7 +38,7 @@ const DetailsPage = () => {
               <div className="text-end">
                 <h1 className="fw-bolder">{item.name}</h1>
                 <p> $1000 deposit upon any Arena booking</p>
-                           </div>
+              </div>
               <table className="table table-striped mt-5">
                 <tbody>
                   <tr>

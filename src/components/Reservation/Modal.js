@@ -79,10 +79,11 @@ const Modal = ({ showModal, setShowModal }) => {
   const dispatch = useDispatch();
   const location = useLocation();
 
-  const token = JSON.parse(localStorage.getItem('token'));
   useEffect(() => {
+    const token = getToken();
     dispatch(getItems(token));
   }, []);
+  
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const animation = useSpring({
