@@ -120,3 +120,36 @@
 .loginImage {
   margin-top: 10%;
 }
+
+.brackets {
+  width: 200px;
+  height: 175px;
+  margin: 60px auto;
+  position: relative;
+  background: white;
+  border-radius: 31px;
+  box-shadow:
+    0 0 0 28px #28a9e1,
+    0 25px 0 28px #115a91;
+} 
+
+.brackets:before {
+   content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  height: 44%;
+  margin: -22% 0 0 -25%; 
+  background: inherit;
+  box-shadow: 0 0 0 28px #4d4d4d;
+}
+
+.brackets:after {
+   content: "";
+  background: inherit;
+  width: 10%;
+  height: 100%;
+  left: 45%;
+  position: absolute;
+}

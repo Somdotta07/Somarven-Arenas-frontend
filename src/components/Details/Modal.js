@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import reservedItems from '../../api/reservedItems';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -13,6 +13,7 @@ const Modal = () => {
   const [loginResponse, setLoginResponse] = useState('');
   const { id, name } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const user = useSelector((state) => state.usersReducer.user);
   const reservedDates = useSelector((state) => state.itemsDetailsReducer.dates);
@@ -45,12 +46,9 @@ const Modal = () => {
       setLoginResponse('Succesfully Reserved');
     } else {
       setLoginResponse(response.error);
+      navigate('/reservations');
     }
   };
-  // const closeModal = () => {
-  //   dispatch(toggleModal);
-  // };
-
   return (
     <div className="wrapper sodal">
       <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={() => dispatch(controlModal(false))}>
