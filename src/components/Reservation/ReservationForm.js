@@ -35,10 +35,6 @@ const ReservationForm = () => {
 
   const reserveSubmit = async (e) => {
     e.preventDefault();
-    // if (!user.id) {
-    //   setLoginResponse('Please Sign in');
-    //   return;
-    // }
     const response = await reservedItems({
       start_date: startDate,
       end_date: endDate,

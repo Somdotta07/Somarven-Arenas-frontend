@@ -37,7 +37,7 @@ const DetailsPage = () => {
               <div className="text-end">
                 <h1 className="fw-bolder">{item.name}</h1>
                 <p> $1000 deposit upon any Arena booking</p>
-                           </div>
+              </div>
               <table className="table table-striped mt-5">
                 <tbody>
                   <tr>

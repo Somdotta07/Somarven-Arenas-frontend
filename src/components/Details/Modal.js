@@ -31,8 +31,6 @@ const Modal = () => {
     });
   });
 
-  console.log(tope);
-
   const reserveSubmit = async (e) => {
     e.preventDefault();
     const response = await reservedItems({
@@ -50,6 +48,9 @@ const Modal = () => {
 
   return (
     <div className="wrapper sodal">
+      <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+        <span>&times;</span>
+      </button>
       <form className="d-flex flex-column h-100 justify-content-center align-items-center " onSubmit={reserveSubmit}>
         <section>
           <span>
@@ -63,7 +64,7 @@ const Modal = () => {
               <option value={id}>
                 {name}
               </option>
-              ))
+
             </select>
           </div>
           <div className="d-flex justify-content-center w-100 mt-3">

@@ -15,6 +15,8 @@ aside {
 aside {
   height: 100vh;
   border-right: 3px solid lightgrey;
+  width: 300px;
+  position: fixed;
 }
 
 .item-cont {
@@ -93,5 +95,5 @@ aside {
 }
 
 .leftfill {
-  margin-right: 100% !important;
+  margin-right: 98% !important;
 }
