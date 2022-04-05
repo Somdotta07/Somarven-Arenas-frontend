@@ -42,6 +42,8 @@ export const handleSignIn = (username, password) => async (dispatch) => {
     dispatch(userSignIn(true, response, token));
     localStorage.setItem('session-status', true);
     localStorage.setItem('token', JSON.stringify(user.headers.get('Authorization')));
+  } else {
+    dispatch(userSignIn(false, response, ''));
   }
 };
 
