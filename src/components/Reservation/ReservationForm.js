@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import { getItems } from '../../api/items';
 import reservedItems from '../../api/reservedItems';
@@ -16,6 +16,7 @@ const ReservationForm = () => {
   const [endDate, setEndDate] = useState(new Date());
   const [loginResponse, setLoginResponse] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const token = getToken();
 
   useEffect(() => {
@@ -48,6 +49,7 @@ const ReservationForm = () => {
     } else {
       setLoginResponse(response.error);
     }
+    navigate('/reservations');
   };
 
   return (
