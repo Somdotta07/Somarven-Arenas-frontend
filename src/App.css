@@ -131,22 +131,22 @@
   box-shadow:
     0 0 0 28px #28a9e1,
     0 25px 0 28px #115a91;
-} 
+}
 
-.brackets:before {
-   content: "";
+.brackets::before {
+  content: "";
   position: absolute;
   left: 50%;
   top: 50%;
   width: 50%;
   height: 44%;
-  margin: -22% 0 0 -25%; 
+  margin: -22% 0 0 -25%;
   background: inherit;
   box-shadow: 0 0 0 28px #4d4d4d;
 }
 
-.brackets:after {
-   content: "";
+.brackets::after {
+  content: "";
   background: inherit;
   width: 10%;
   height: 100%;
