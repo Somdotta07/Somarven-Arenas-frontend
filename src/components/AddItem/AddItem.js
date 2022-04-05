@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { AddItemHandler } from '../../api/items';
+import SideNav from '../SideNav';
 
 const AddItem = () => {
   const dispatch = useDispatch();
@@ -31,7 +32,10 @@ const AddItem = () => {
 
   return (
     <div className="row addItem">
-      <div className="p-0 d-flex flex-column justify-content-center align-items-center">
+      <div className="col-2 p-0">
+        <SideNav />
+      </div>
+      <div className="p-0 d-flex flex-column justify-content-center align-items-center col-md-10 col-sm-12">
         <form onSubmit={(e) => onSubmit(e)} className="mt-5 mx-3">
           <input type="text" className="form-control m-1" id="name" placeholder="Enter Name" name="name" onChange={(e) => handleChange(e)} />
           <textarea rows="4" cols="50" type="text" className="form-control m-1" id="description" placeholder="Enter Description" name="description" onChange={(e) => handleChange(e)} />

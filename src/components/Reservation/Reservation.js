@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import './Reserve.scss';
 import getReserved from '../../api/reserved';
 import deleteReserve from '../../api/deleteReserve';
+import SideNav from '../SideNav';
 
 const Reservation = () => {
   const reservations = useSelector((state) => state.reservations.reservations) || [];
@@ -43,9 +44,11 @@ const Reservation = () => {
   };
 
   return (
-    <>
-
-      <div className="d-flex flex-row flex-wrap justify-content-center  w-70">
+    <div className="row">
+      <div className="col-2 p-0">
+        <SideNav />
+      </div>
+      <div className="d-flex flex-row flex-wrap justify-content-center  w-7 col-md-10 col-sm-12">
         {reservations.length > 0 ? (
           <>
             <header>
@@ -151,9 +154,7 @@ const Reservation = () => {
         ) : <h2>No Reservation</h2>}
       </div>
 
-    </>
-  // </div>
-
+    </div>
   );
 };
 
