@@ -12,6 +12,7 @@ import Reservation from './components/Reservation/Reservation';
 import AddItem from './components/AddItem/AddItem';
 import DeleteItem from './components/DeleteItemPage/DeleteItem';
 import './App.css';
+import NavBar from './components/NavBar';
 
 function App() {
   const sessionDetails = useSelector((state) => state.sessions);
@@ -19,10 +20,8 @@ function App() {
   return (
     <div className="App">
       <div className="row">
-        {/* <div className="col-2 p-0">
-          {sessionDetails.isSignIn ? <SideNav /> : <SignedOutNav /> }
-        </div> */}
-        <div className="col-md-10 col-sm-12 ">
+        <NavBar />
+        <div className="col-md-12 col-sm-12">
           <Routes>
             <Route exact path="/sign_in" element={sessionDetails.isSignIn ? (<Navigate replace to="/items" />) : <SignIn />} />
             <Route exact path="/signup" element={sessionDetails.isSignUp ? (<Navigate replace to="/sign_in" />) : <SignUp />} />

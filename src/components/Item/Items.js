@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { FaFacebookF, FaInstagramSquare } from 'react-icons/fa';
 import { BsTwitter } from 'react-icons/bs';
 
-
 const Items = ({ item, onClick }) => {
   const {
     name, image, description, city, price,

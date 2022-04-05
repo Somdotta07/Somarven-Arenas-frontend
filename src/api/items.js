@@ -25,7 +25,6 @@ export const getReservationDates = (id, token) => async (dispatch) => {
 
 export const AddItemHandler = (item, token) => async (dispatch) => {
   const newItem = { item };
-  console.log(newItem);
   await fetch('http://localhost:3000/api/v1/items', {
     method: 'POST',
     body: JSON.stringify(newItem),

@@ -23,11 +23,11 @@ const AddItem = () => {
     setNewItem({ ...newItem, [name]: value });
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     const token = getToken();
     e.preventDefault();
-    dispatch(AddItemHandler(newItem, token));
-    dispatch(getItems(token));
+    await dispatch(AddItemHandler(newItem, token));
+    await dispatch(getItems(token));
     navigate('/items');
   };
 

@@ -14,7 +14,7 @@ const Item = () => {
   const items = useSelector((state) => state.items.items) || [];
   const dispatch = useDispatch();
   const token = getToken();
-  
+
   useEffect(() => {
     dispatch(getItems(token));
   }, []);
