@@ -2,14 +2,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { AddItemHandler } from '../../api/items';
+import { AddItemHandler, getItems } from '../../api/items';
+import { getToken } from '../../utils/sessionHelper';
 import SideNav from '../SideNav';
 
 const AddItem = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const token = JSON.parse(localStorage.getItem('token'));
 
   const [newItem, setNewItem] = useState({
     name: '',
@@ -24,9 +23,11 @@ const AddItem = () => {
     setNewItem({ ...newItem, [name]: value });
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
+    const token = getToken();
     e.preventDefault();
-    dispatch(AddItemHandler(newItem, token));
+    await dispatch(AddItemHandler(newItem, token));
+    await dispatch(getItems(token));
     navigate('/items');
   };
 

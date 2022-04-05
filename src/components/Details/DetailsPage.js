@@ -6,6 +6,7 @@ import Modal from './Modal';
 import './Details.css';
 import { getItemsDetails, getReservationDates } from '../../api/items';
 import { controlModal } from '../../redux/items/ItemDetails';
+import { getToken } from '../../utils/sessionHelper';
 import SideNav from '../SideNav';
 
 const DetailsPage = () => {
@@ -14,7 +15,7 @@ const DetailsPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   useEffect(() => {
-    const token = JSON.parse(localStorage.getItem('token'));
+    const token = getToken();
     dispatch(getItemsDetails(id, token));
     dispatch(getReservationDates(id, token));
   }, []);
@@ -26,7 +27,7 @@ const DetailsPage = () => {
       </div>
       <div className="container mt-5 col-md-10 col-sm-12 ">
         <div>
-          { modal && <Modal />}
+          {modal && <Modal />}
         </div>
         {item.length === 0 ? <h2>Loading...</h2> : (
           <>
@@ -70,7 +71,7 @@ const DetailsPage = () => {
               </div>
             </div>
           </>
-        ) }
+        )}
 
       </div>
     </div>

@@ -7,13 +7,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Items from './Items';
 import { getItems, getItemsDetails } from '../../api/items';
 import 'swiper/css';
+import { getToken } from '../../utils/sessionHelper';
 import SideNav from '../SideNav';
 
 const Item = () => {
   const items = useSelector((state) => state.items.items) || [];
   const dispatch = useDispatch();
+  const token = getToken();
 
-  const token = JSON.parse(localStorage.getItem('token'));
   useEffect(() => {
     dispatch(getItems(token));
   }, []);

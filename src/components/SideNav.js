@@ -14,7 +14,6 @@ const SideNav = () => {
     dispatch(handleSignOut()).then(() => {
       navigate('/sign_in');
     });
-    localStorage.setItem('session-status', false);
   };
 
   const [clickedIndex, setClickedIndex] = useState('') || 'items';

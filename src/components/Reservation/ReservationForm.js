@@ -6,6 +6,7 @@ import { getItems } from '../../api/items';
 import reservedItems from '../../api/reservedItems';
 import 'react-datepicker/dist/react-datepicker.css';
 import './Reserve.scss';
+import { getToken } from '../../utils/sessionHelper';
 import SideNav from '../SideNav';
 
 const ReservationForm = () => {
@@ -16,8 +17,8 @@ const ReservationForm = () => {
   const [loginResponse, setLoginResponse] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const token = getToken();
 
-  const token = JSON.parse(localStorage.getItem('token'));
   useEffect(() => {
     dispatch(getItems(token));
   }, []);

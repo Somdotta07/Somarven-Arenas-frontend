@@ -16,8 +16,6 @@ function NavBar() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" data-bs-target="#responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav>
-              <Nav.Link href="/">Sign in</Nav.Link>
-              <Nav.Link href="/signup">Sign up</Nav.Link>
               <Nav.Link href="/items">Items</Nav.Link>
               <Nav.Link href="/details">Details</Nav.Link>
               <Nav.Link href="/reserve">Reserve</Nav.Link>

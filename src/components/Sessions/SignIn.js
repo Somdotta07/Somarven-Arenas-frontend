@@ -52,7 +52,7 @@ const SignIn = () => {
           Sign In
         </button>
       </form>
-      <div clasName="newUser">
+      <div className="newUser">
         <h5>New User?</h5>
         <Link to="/signup">Sign up here</Link>
       </div>

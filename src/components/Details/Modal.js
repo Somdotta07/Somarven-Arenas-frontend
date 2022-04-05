@@ -46,8 +46,8 @@ const Modal = () => {
       setLoginResponse('Succesfully Reserved');
     } else {
       setLoginResponse(response.error);
-      navigate('/reservations');
     }
+    navigate('/reservations');
   };
   return (
     <div className="wrapper sodal">

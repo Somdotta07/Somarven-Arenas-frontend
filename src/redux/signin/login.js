@@ -1,3 +1,5 @@
+import { clearSession, getToken } from '../../utils/sessionHelper';
+
 const SIGN_UP = 'store/log_in/USER_SIGN_UP';
 const SIGN_IN = 'store/log_in/USER_SIGN_IN';
 const SIGN_OUT = 'store/log_in/USER_SIGN_OUT';
@@ -40,7 +42,6 @@ export const handleSignIn = (username, password) => async (dispatch) => {
     dispatch(userSignIn(true, response, token));
     localStorage.setItem('session-status', true);
     localStorage.setItem('token', JSON.stringify(user.headers.get('Authorization')));
-    // console.log(user.headers.get('Authorization'));
   }
 };
 
@@ -60,7 +61,7 @@ export const handleSignUp = (email, username, password) => async (dispatch) => {
 };
 
 export const handleSignOut = () => async (dispatch) => {
-  const token = JSON.parse(localStorage.getItem('token'));
+  const token = getToken();
   const t = await fetch('http://127.0.0.1:3000/users/sign_out', {
     method: 'DELETE',
     headers: {
@@ -71,6 +72,7 @@ export const handleSignOut = () => async (dispatch) => {
   const response = await t.json();
   if (response.status === 200) {
     dispatch(userSignOut(response.message));
+    clearSession();
   }
 };
 
@@ -92,6 +94,7 @@ const sessionsReducer = (state = initialState, action) => {
     case SIGN_OUT:
       return {
         ...state,
+        user_token: '',
         isSignIn: false,
         message: action.payload,
       };
