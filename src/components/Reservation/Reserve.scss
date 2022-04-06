@@ -226,17 +226,16 @@ ul {
 }
 /* stylelint-enable at-rule-no-unknown */
 
-
 .header-a {
   margin-right: -50%;
 }
 
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    margin-top: 20%;
+  }
+}
 
-@media only screen and (max-width: 600px){
-.wrapper {
-  margin-top: 20%;
-}
-}
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .item-arena {
     margin-left: 50%;
