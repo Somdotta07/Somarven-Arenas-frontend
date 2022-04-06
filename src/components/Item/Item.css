@@ -1,8 +1,7 @@
-.app-title{
+/* .app-title{
   color: rgb(75, 71, 71);
   white-space: nowrap;
-  /* top: 50%;
-  left: 50%; */
+
   transform: translate(-50%, -50%);
   font-size: 3em;
   font-family: sans-serif;
@@ -13,21 +12,21 @@
     5px 13px 15px black;
     margin-left: 50%;
     margin-top: 10%;
-}
+}*/
 
-.app-title:hover {
+/*.app-title:hover {
   transition: 0.3s;
   transform: scale(1.1) translate(-50%, -50%);
   text-shadow: 1px -1px 0 grey, 1px -2px 0 grey, 1px -3px 0 grey,
     1px -4px 0 grey, 1px -5px 0 grey, 1px -6px 0 grey, 1px -7px 0 grey,
     1px -8px 0 grey, 5px -13px 15px black, 5px -13px 25px #808080;
-}
+} */
 
 
 aside {
   height: 100vh;
   border-right: 3px solid lightgrey;
-  width: 300px;
+  width: 16%;
   position: fixed;
 }
 

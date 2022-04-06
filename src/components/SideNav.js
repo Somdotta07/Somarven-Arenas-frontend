@@ -17,7 +17,7 @@ const SideNav = () => {
     });
   };
 
-  const [clickedIndex, setClickedIndex] = useState('') || 'items';
+  const [clickedIndex, setClickedIndex] = useState(0);
   return (
     <aside className="p-3 d-sm-block d-none">
       <div className="logo-text">
@@ -26,19 +26,19 @@ const SideNav = () => {
       </div>
       <h1 className="brackets">Arena</h1>
       <div className="sidebar-items">
-        <button type="button" onClick={() => { setClickedIndex('items'); navigate('/items'); }} className="bg-transparent borderless w-100 text-start">
+        <button type="button" onClick={() => { setClickedIndex(0); navigate('/items'); }} className="bg-transparent borderless w-100 text-start">
           <h5 className={`${clickedIndex === 0 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>ARENAS</h5>
         </button>
-        <button type="button" onClick={() => { setClickedIndex('reserve'); navigate('/reserve'); }} className="bg-transparent borderless w-100 text-start">
+        <button type="button" onClick={() => { setClickedIndex(1); navigate('/reserve'); }} className="bg-transparent borderless w-100 text-start">
           <h5 className={`${clickedIndex === 1 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>RESERVE</h5>
         </button>
-        <button type="button" onClick={() => { setClickedIndex('reservation'); navigate('/reservations'); }} className="bg-transparent borderless w-100 text-start">
+        <button type="button" onClick={() => { setClickedIndex(2); navigate('/reservations'); }} className="bg-transparent borderless w-100 text-start">
           <h5 className={`${clickedIndex === 2 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>MY RESERVATIONS</h5>
         </button>
-        <button type="button" onClick={() => { setClickedIndex('additem'); navigate('/additem'); }} className="bg-transparent borderless w-100 text-start">
+        <button type="button" onClick={() => { setClickedIndex(3); navigate('/additem'); }} className="bg-transparent borderless w-100 text-start">
           <h5 className={`${clickedIndex === 3 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>ADD ARENAS</h5>
         </button>
-        <button type="button" onClick={() => { setClickedIndex('deleteitem'); navigate('/delete-item'); }} className="bg-transparent borderless w-100 text-start">
+        <button type="button" onClick={() => { setClickedIndex(4); navigate('/delete-item'); }} className="bg-transparent borderless w-100 text-start">
           <h5 className={`${clickedIndex === 4 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>DELETE </h5>
         </button>
         <button type="button" onClick={() => signOut()} className="bg-transparent borderless w-100 text-start">

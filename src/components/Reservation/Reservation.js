@@ -44,7 +44,7 @@ const Reservation = () => {
 
   return (
     <div>
-      <div className="d-flex flex-row flex-wrap justify-content-center  w-7  item-arena">
+      <div className="d-flex flex-row flex-wrap justify-content-center w-70 item-arena">
         {reservations.length > 0 ? (
           <>
             <header>
@@ -150,7 +150,6 @@ const Reservation = () => {
           </>
         ) : <h2>No Reservation</h2>}
       </div>
-
     </div>
   );
 };

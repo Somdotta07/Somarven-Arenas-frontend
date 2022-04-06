@@ -33,6 +33,7 @@ const DeleteItem = () => {
         {items.length > 0 ? (
           <>
             <Swiper
+              className="swiper"
               spaceBetween={0}
               slidesPerView={width > 768 ? 3 : 1}
             >

@@ -54,7 +54,7 @@ const DetailsPage = () => {
               </table>
 
               <div className="d-flex justify-content-end reserve-div">
-                <div className="reserve  p-1">
+                <div className="reserve  p-2">
                   <BsFillGearFill className="mx-2" size={40} color="white" />
                   <button className="btn btn-light reserve-btn" type="submit" onClick={() => dispatch(controlModal(true))}>Reserve</button>
                   <BsFillArrowRightCircleFill className="mx-2" size={40} color="white" />
