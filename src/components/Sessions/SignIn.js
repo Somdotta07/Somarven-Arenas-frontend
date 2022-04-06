@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Button } from 'react-bootstrap';
 import { handleSignIn } from '../../redux/signin/login';
 import loginImg from './login.png';
 
@@ -19,7 +20,7 @@ const SignIn = () => {
 
   return (
     <div className="signedIn">
-      <div className="loginImage">
+      <div>
         <img src={loginImg} width="300" style={{ position: 'relative' }} alt="login" />
       </div>
       <form className="loginform">
@@ -53,8 +54,12 @@ const SignIn = () => {
         </button>
       </form>
       <div className="newUser">
-        <h5>New User?</h5>
-        <Link to="/signup">Sign up here</Link>
+        <h5 className="new-user-head">New User?</h5>
+        <Button variant="outline-success">
+          <Link to="/signup" className="default-link">
+            Sign up
+          </Link>
+        </Button>
       </div>
     </div>
   );

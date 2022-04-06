@@ -17,7 +17,7 @@ function App() {
   const sessionDetails = useSelector((state) => state.sessions);
 
   return (
-    <div className="App">
+    <div className="App text-center">
       <div className="row">
         <NavBar />
         { sessionDetails.isSignIn && <div className="col-2 p-0">
@@ -37,6 +37,7 @@ function App() {
           </Routes>
         </div>
       </div>
+      {/* </div> */}
     </div>
   );
 }
