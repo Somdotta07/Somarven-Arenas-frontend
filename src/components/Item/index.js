@@ -41,14 +41,14 @@ const Item = () => {
       <div className="col-2 p-0">
         <SideNav />
       </div>
-      <div className="col-md-10 col-sm-12 ">
+      <div className="col-md-10 col-sm-12 min-vw-70 position-relative item-arena">
         <h1 className="fw-bolder text-center my-3">Beautiful Arenas</h1>
         <p className="text-muted text-center main-screen-subtitle">
           Please Select an Arena
         </p>
         { items.length > 0 ? (
           <>
-            <div className="row">
+            <div className="row position-relative ">
               <Swiper
                 spaceBetween={0}
                 slidesPerView={width > 768 ? 3 : 1}

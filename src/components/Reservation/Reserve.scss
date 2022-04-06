@@ -55,7 +55,7 @@ ul {
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
-  // margin-left: 40%;
+  margin-right: 10%;
 
   .booking-card {
     position: relative;
@@ -229,3 +229,15 @@ h1 {
   margin: 10px 20px;
 }
 /* stylelint-enable at-rule-no-unknown */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .item-arena {
+    margin-left: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  ul {
+    gap: 10px;
+    margin-left: 20%;
+  }
+}

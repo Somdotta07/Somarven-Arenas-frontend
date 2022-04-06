@@ -1,12 +1,12 @@
 .details-info {
-  margin-top: 20%;
+  margin-top: 20% !important;
 }
 
 .sodal {
-  width: 80vw;
-  height: 50vh;
+  width: 70vw;
+  height: 70vh;
   position: absolute;
-  background-color: #fff;
+  background-color: #ffff;
   z-index: 200000;
   border-radius: 8px;
   top: 25vh;
@@ -46,4 +46,33 @@
   border-top-left-radius: 100%;
   margin-top: 10% !important;
   margin-left: -25%;
+}
+
+.close {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  border: none;
+  color: black;
+  margin-right: 10%;
+  background-color: #ffff;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .details-pg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    float: right;
+    margin-top: 10% !important;
+  }
+
+  .reserve {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5%;
+  }
 }

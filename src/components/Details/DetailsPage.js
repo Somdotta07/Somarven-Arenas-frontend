@@ -31,13 +31,10 @@ const DetailsPage = () => {
         </div>
         {item.length === 0 ? <h2>Loading...</h2> : (
           <>
-            <div className="row">
+            <div className="row  details-pg">
 
-              <div className="col-md-6 col-12 ">
+              <div className="col-md-6 col-12">
                 <img className="w-100" src={item.image} alt={item.name} />
-                {/* <div className="d-flex justify-content-center align-items-center details-fill ">
-    <BsFillCaretLeftFill />
-  </div> */}
               </div>
               <div className="col-md-5 col-12 details-info">
                 <div className="text-end">
