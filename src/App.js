@@ -10,16 +10,22 @@ import Reservation from './components/Reservation/Reservation';
 import AddItem from './components/AddItem/AddItem';
 import DeleteItem from './components/DeleteItemPage/DeleteItem';
 import NavBar from './components/NavBar';
+import SideNav from './components/SideNav';
 import './App.css';
 
 function App() {
   const sessionDetails = useSelector((state) => state.sessions);
 
   return (
-    <div className="App">
+    <div className="App text-center">
       <div className="row">
         <NavBar />
-        <div className="col-md-12 col-sm-12">
+        { sessionDetails.isSignIn && (
+        <div className="col-2 p-0">
+          <SideNav />
+        </div>
+        ) }
+        <div className="col-md-10 col-sm-12">
           <Routes>
             <Route path="/" element={sessionDetails.isSignIn ? (<Navigate replace to="/items" />) : <SignIn />} />
             <Route exact path="/sign_in" element={sessionDetails.isSignIn ? (<Navigate replace to="/items" />) : <SignIn />} />
@@ -33,6 +39,7 @@ function App() {
           </Routes>
         </div>
       </div>
+      {/* </div> */}
     </div>
   );
 }

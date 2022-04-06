@@ -6,15 +6,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { getItems } from '../../api/items';
 import './DeleteItem.css';
 import EventCard from './Item';
-import SideNav from '../SideNav';
 
 const DeleteItem = () => {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.items.items) || [];
-
   const sessionDetails = useSelector((state) => state.sessions);
-
   const [width, setWidth] = useState(window.innerWidth);
+  const token = sessionDetails.user_token || JSON.parse(localStorage.getItem('token'));
 
   const fixDimensions = () => {
     setWidth(window.innerWidth);
@@ -24,18 +22,13 @@ const DeleteItem = () => {
     return () => window.removeEventListener('resize', fixDimensions);
   }, [items]);
 
-  const token = sessionDetails.user_token || JSON.parse(localStorage.getItem('token'));
-
   useEffect(() => { dispatch(getItems(token)); }, []);
 
   return (
-    <div className="row">
-      <div className="col-2 p-0">
-        <SideNav />
-      </div>
-      <div className="col-md-10 col-sm-12 delete-page">
+    <div>
+      <div className="delete-page">
         <header>
-          <h1 className="header">Delete An Arena</h1>
+          <h1 className="header app-title">Delete An Arena</h1>
         </header>
         {items.length > 0 ? (
           <>

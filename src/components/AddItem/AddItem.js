@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { AddItemHandler, getItems } from '../../api/items';
 import { getToken } from '../../utils/sessionHelper';
-import SideNav from '../SideNav';
 
 const AddItem = () => {
   const dispatch = useDispatch();
@@ -39,11 +38,8 @@ const AddItem = () => {
 
   return (
     <div className="row addItem">
-      <div className="col-2 p-0">
-        <SideNav />
-      </div>
       <header>
-        <h1 className="addHeader">Add An Arena</h1>
+        <h1 className="addHeader app-title">Add An Arena</h1>
       </header>
       <div className="d-flex flex-column justify-content-center align-items-center col-md-10 col-sm-12 position-relative item-arena">
         <form onSubmit={(e) => onSubmit(e)} className="mt-5 mx-3 ">

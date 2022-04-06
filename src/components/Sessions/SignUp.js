@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Button } from 'react-bootstrap';
 import { handleSignUp } from '../../redux/signin/login';
 import loginImg from './login.png';
 
@@ -54,9 +55,14 @@ const SignUp = () => {
         />
         <button type="submit" className="submit-btn sign" onClick={(e) => signUpUser(e)}>Sign Up</button>
       </form>
-      <div>
-        <h4>Existing User?</h4>
-        <Link to="/">Sign in here</Link>
+
+      <div className="newUser">
+        <h5 className="new-user-head">Existing User?</h5>
+        <Button variant="outline-success">
+          <Link to="/" className="default-link">
+            Sign in
+          </Link>
+        </Button>
       </div>
     </div>
   );

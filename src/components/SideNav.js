@@ -5,6 +5,7 @@ import { BsTwitter, BsVimeo } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { handleSignOut } from '../redux/signin/login';
+import './Item/Item.css';
 
 const SideNav = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,11 @@ const SideNav = () => {
   const [clickedIndex, setClickedIndex] = useState('') || 'items';
   return (
     <aside className="p-3 d-sm-block d-none">
-      <h1 className="fw-bolder fst-italic brackets">Somarven Arenas</h1>
+      <div className="logo-text">
+        <h2 className="fw-bolder fst-italic ">Somarven</h2>
+        <h2 className="fw-bolder fst-italic ">Somarven</h2>
+      </div>
+      <h1 className="brackets">Arena</h1>
       <div className="sidebar-items">
         <button type="button" onClick={() => { setClickedIndex('items'); navigate('/items'); }} className="bg-transparent borderless w-100 text-start">
           <h5 className={`${clickedIndex === 0 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>ARENAS</h5>

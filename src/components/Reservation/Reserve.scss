@@ -228,7 +228,14 @@ ul {
 h1 {
   margin: 10px 20px;
 }
-/* stylelint-enable at-rule-no-unknown */
+
+
+@media only screen and (max-width: 600px){
+  ul{
+    margin-left: 15%;
+
+  }
+}
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .item-arena {
     margin-left: 50%;
@@ -241,3 +248,4 @@ h1 {
     margin-left: 20%;
   }
 }
+/* stylelint-enable at-rule-no-unknown */

@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import './Reserve.scss';
 import getReserved from '../../api/reserved';
 import deleteReserve from '../../api/deleteReserve';
-import SideNav from '../SideNav';
 
 const Reservation = () => {
   const reservations = useSelector((state) => state.reservations.reservations) || [];
@@ -20,7 +19,7 @@ const Reservation = () => {
   }, [reservations]);
   const dispatch = useDispatch();
   const daysNum = (startDate, endDate) => {
-    const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+    const oneDay = 24 * 60 * 60 * 1000;
     const date1 = new Date(startDate);
     const date2 = new Date(endDate);
 
@@ -44,17 +43,15 @@ const Reservation = () => {
   };
 
   return (
-    <div className="row">
-      <div className="col-2 p-0">
-        <SideNav />
-      </div>
-      <div className="d-flex flex-row flex-wrap justify-content-center  w-7 col-md-10 col-sm-12  item-arena">
+    <div>
+      <div className="d-flex flex-row flex-wrap justify-content-center  w-7  item-arena">
         {reservations.length > 0 ? (
           <>
             <header>
-              <h1 className="header">Reserved Arena</h1>
+              <h1 className="header app-title">Reserved Arena</h1>
             </header>
             <Swiper
+              className="swiper"
               spaceBetween={0}
               slidesPerView={width > 768 ? 3 : 1}
             >
