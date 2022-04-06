@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import SignIn from './components/Sessions/SignIn';
 import SignUp from './components/Sessions/SignUp';
 import Item from './components/Item';
@@ -21,15 +21,15 @@ function App() {
         <NavBar />
         <div className="col-md-12 col-sm-12">
           <Routes>
-            <Route path="/" element={sessionDetails.isSignIn ? <Item /> : <SignIn />} />
-            <Route exact path="/sign_in" element={sessionDetails.isSignIn ? <Item /> : <SignIn />} />
-            <Route exact path="/signup" element={sessionDetails.isSignUp ? <Item /> : <SignUp />} />
-            <Route path="/items" element={sessionDetails.isSignIn ? <Item /> : <SignIn />} />
-            <Route path="/details/:id/:name" element={sessionDetails.isSignIn ? <DetailsPage /> : <SignIn />} />
-            <Route path="/reserve" element={sessionDetails.isSignIn ? <ReservationForm /> : <SignIn />} />
-            <Route path="/addItem" element={sessionDetails.isSignIn ? <AddItem /> : <SignIn />} />
-            <Route path="/delete-item" element={sessionDetails.isSignIn ? <DeleteItem /> : <SignIn />} />
-            <Route path="/reservations" element={sessionDetails.isSignIn ? <Reservation /> : <SignIn />} />
+            <Route path="/" element={sessionDetails.isSignIn ? (<Navigate replace to="/items" />) : <SignIn />} />
+            <Route exact path="/sign_in" element={sessionDetails.isSignIn ? (<Navigate replace to="/items" />) : <SignIn />} />
+            <Route exact path="/signup" element={sessionDetails.isSignUp ? (<Navigate replace to="/sign_in" />) : <SignUp />} />
+            <Route path="/items" element={sessionDetails.isSignIn ? <Item /> : (<Navigate replace to="/sign_in" />)} />
+            <Route path="/details/:id/:name" element={sessionDetails.isSignIn ? <DetailsPage /> : (<Navigate replace to="/sign_in" />)} />
+            <Route path="/reserve" element={sessionDetails.isSignIn ? <ReservationForm /> : (<Navigate replace to="/sign_in" />)} />
+            <Route path="/addItem" element={sessionDetails.isSignIn ? <AddItem /> : (<Navigate replace to="/sign_in" />)} />
+            <Route path="/delete-item" element={sessionDetails.isSignIn ? <DeleteItem /> : (<Navigate replace to="/sign_in" />)} />
+            <Route path="/reservations" element={sessionDetails.isSignIn ? <Reservation /> : (<Navigate replace to="/sign_in" />)} />
           </Routes>
         </div>
       </div>
