@@ -40,13 +40,18 @@ const Item = () => {
       {/* HEADER */}
       <h1 className="fw-bolder text-center my-3">Beautiful Arenas</h1>
       {/* SUB HEADER */}
+      {/* <div className=" item-cont min-vw-70 position-relative item-arena">
+
+      <h1 className="fw-bolder text-center my-3 app-title">Beautiful Arenas</h1> */}
+
       <p className="text-muted text-center main-screen-subtitle">
         Please Select an Arena
       </p>
       {items.length > 0 ? (
         <>
-          {/* ITEMS SWIPER*/}
+          {/* ITEMS SWIPER */}
           <div className="">
+            {/* <div className="position-relative w-98"> */}
             <Swiper
               className="swiper"
               spaceBetween={0}
@@ -77,7 +82,7 @@ const Item = () => {
                 swiper.slidePrev();
               }}
             >
-              <div className="main-page-handle-left free d-flex justify-content-center align-items-center ">
+              <div className="main-page-handle-left free d-flex justify-content-center align-items-center">
                 <BsFillCaretLeftFill />
               </div>
             </button>
@@ -99,4 +104,5 @@ const Item = () => {
     </div>
   );
 };
+
 export default Item;

@@ -20,6 +20,7 @@ const DetailsPage = () => {
   }, []);
 
   return (
+    // mobile-m
     <div className="container mt-5">
       <div>
         {modal && <Modal />}
@@ -27,8 +28,8 @@ const DetailsPage = () => {
       {item.length === 0 ? <h2>Loading...</h2> : (
         <>
           <div className="row  details-pg">
-
             <div className="col-md-6 col-12">
+              {/* mobile-img */}
               <img className="w-100" src={item.image} alt={item.name} />
             </div>
             <div className="col-md-5 col-12 details-info">

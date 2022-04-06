@@ -48,7 +48,7 @@ const Reservation = () => {
         {reservations.length > 0 ? (
           <>
             <header>
-              <h1 className="header">Reserved Arena</h1>
+              <h1 className="header app-title">Reserved Arena</h1>
             </header>
             <Swiper
               className="swiper"

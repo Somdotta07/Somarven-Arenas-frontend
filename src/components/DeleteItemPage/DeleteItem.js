@@ -10,10 +10,9 @@ import EventCard from './Item';
 const DeleteItem = () => {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.items.items) || [];
-
   const sessionDetails = useSelector((state) => state.sessions);
-
   const [width, setWidth] = useState(window.innerWidth);
+  const token = sessionDetails.user_token || JSON.parse(localStorage.getItem('token'));
 
   const fixDimensions = () => {
     setWidth(window.innerWidth);
@@ -23,15 +22,13 @@ const DeleteItem = () => {
     return () => window.removeEventListener('resize', fixDimensions);
   }, [items]);
 
-  const token = sessionDetails.user_token || JSON.parse(localStorage.getItem('token'));
-
   useEffect(() => { dispatch(getItems(token)); }, []);
 
   return (
     <div>
       <div className="delete-page">
         <header>
-          <h1 className="header">Delete An Arena</h1>
+          <h1 className="header app-title">Delete An Arena</h1>
         </header>
         {items.length > 0 ? (
           <>

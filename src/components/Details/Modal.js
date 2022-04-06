@@ -54,7 +54,7 @@ const Modal = () => {
       <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={() => dispatch(controlModal(false))}>
         <span>&times;</span>
       </button>
-      <form className="d-flex flex-column h-100 justify-content-center align-items-center " onSubmit={reserveSubmit}>
+      <form className="d-flex flex-column h-100 justify-content-center align-items-center" onSubmit={reserveSubmit}>
         <section>
           <span>
             {loginResponse}
@@ -70,7 +70,7 @@ const Modal = () => {
 
             </select>
           </div>
-          <div className="d-flex justify-content-center w-100 mt-3">
+          <div className="d-flex justify-content-center date-p w-100 mt-3">
             <DatePicker
               selected={startDate}
               onChange={(date) => setStartDate(date)}
@@ -78,7 +78,7 @@ const Modal = () => {
               excludeDateIntervals={tope}
             />
           </div>
-          <div className="d-flex justify-content-center w-100 mt-3">
+          <div className="d-flex justify-content-center date-p w-100 mt-3">
             <DatePicker
               selected={endDate}
               dateFormat="yyyy/dd/MM"
@@ -87,7 +87,7 @@ const Modal = () => {
             />
           </div>
           <div className="d-flex w-100 justify-content-center pt-5">
-            <button className="btn btn-outline-success rounded-pill" type="submit">Reserve</button>
+            <button className="btn btn-warning rounded-pill" type="submit">Reserve</button>
           </div>
         </section>
       </form>
