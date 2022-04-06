@@ -12,6 +12,7 @@ import SideNav from '../SideNav';
 
 const Item = () => {
   const items = useSelector((state) => state.items.items) || [];
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const token = getToken();
 
@@ -28,11 +29,10 @@ const Item = () => {
     window.addEventListener('resize', fixDimensions);
     return () => window.removeEventListener('resize', fixDimensions);
   }, [items]);
-  const navigate = useNavigate();
 
   const renderDetailsPage = (id, name) => {
     dispatch(getItemsDetails(id, token)).then(() => {
-      navigate(`/Details/${id}/${name}`);
+      navigate(`/details/${id}/${name}`);
     });
   };
 
