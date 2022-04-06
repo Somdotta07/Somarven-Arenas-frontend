@@ -48,7 +48,7 @@ const Reservation = () => {
       <div className="col-2 p-0">
         <SideNav />
       </div>
-      <div className="d-flex flex-row flex-wrap justify-content-center  w-7 col-md-10 col-sm-12">
+      <div className="d-flex flex-row flex-wrap justify-content-center w-70 col-md-10 col-sm-12">
         {reservations.length > 0 ? (
           <>
             <header>
