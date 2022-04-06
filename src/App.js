@@ -10,7 +10,7 @@ import Reservation from './components/Reservation/Reservation';
 import AddItem from './components/AddItem/AddItem';
 import DeleteItem from './components/DeleteItemPage/DeleteItem';
 import NavBar from './components/NavBar';
-import SideNav from './components/SideNav'
+import SideNav from './components/SideNav';
 import './App.css';
 
 function App() {
@@ -20,9 +20,11 @@ function App() {
     <div className="App text-center">
       <div className="row">
         <NavBar />
-        { sessionDetails.isSignIn && <div className="col-2 p-0">
+        { sessionDetails.isSignIn && (
+        <div className="col-2 p-0">
           <SideNav />
-        </div> }
+        </div>
+        ) }
         <div className="col-md-10 col-sm-12">
           <Routes>
             <Route path="/" element={sessionDetails.isSignIn ? (<Navigate replace to="/items" />) : <SignIn />} />

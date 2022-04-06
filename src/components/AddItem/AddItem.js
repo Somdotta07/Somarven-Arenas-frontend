@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { AddItemHandler, getItems } from '../../api/items';
 import { getToken } from '../../utils/sessionHelper';
-import SideNav from '../SideNav';
+
 
 const AddItem = () => {
   const dispatch = useDispatch();

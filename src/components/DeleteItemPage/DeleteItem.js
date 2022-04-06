@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { getItems } from '../../api/items';
 import './DeleteItem.css';
 import EventCard from './Item';
-import SideNav from '../SideNav';
+
 
 const DeleteItem = () => {
   const dispatch = useDispatch();
@@ -36,7 +36,8 @@ const DeleteItem = () => {
         </header>
         {items.length > 0 ? (
           <>
-            <Swiper className="swiper"
+            <Swiper
+              className="swiper"
               spaceBetween={0}
               slidesPerView={width > 768 ? 3 : 1}
             >

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FaFacebookF, FaGooglePlus } from 'react-icons/fa';
 import { GrPinterest } from 'react-icons/gr';
 import { BsTwitter, BsVimeo } from 'react-icons/bs';
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { handleSignOut } from '../redux/signin/login';
 import './Item/Item.css';
@@ -17,7 +17,7 @@ const SideNav = () => {
     });
   };
 
-  const [clickedIndex, setClickedIndex] = useState(0)
+  const [clickedIndex, setClickedIndex] = useState(0);
   return (
     <aside className="p-3 d-sm-block d-none">
       <div className="sidebar-items">
