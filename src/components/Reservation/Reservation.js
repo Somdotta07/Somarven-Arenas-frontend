@@ -48,7 +48,7 @@ const Reservation = () => {
       <div className="col-2 p-0">
         <SideNav />
       </div>
-      <div className="d-flex flex-row flex-wrap justify-content-center w-70 col-md-10 col-sm-12">
+      <div className="d-flex flex-row flex-wrap justify-content-center  w-7 col-md-10 col-sm-12  item-arena">
         {reservations.length > 0 ? (
           <>
             <header>
@@ -133,7 +133,7 @@ const Reservation = () => {
                   swiper.slidePrev();
                 }}
               >
-                <div className="main-page-handle-left d-flex justify-content-center align-items-center ">
+                <div className="main-page-handle-left d-flex justify-content-center align-items-center">
                   <BsFillCaretLeftFill />
                 </div>
               </button>

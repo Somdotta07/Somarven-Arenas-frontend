@@ -20,7 +20,7 @@ const SideNav = () => {
   const [clickedIndex, setClickedIndex] = useState('') || 'items';
   return (
     <aside className="p-3 d-sm-block d-none">
-      <h1 className="fw-bolder fst-italic brackets">Somar Arenas</h1>
+      <h1 className="fw-bolder fst-italic brackets">Somarven Arenas</h1>
       <div className="sidebar-items">
         <button type="button" onClick={() => { setClickedIndex('items'); navigate('/items'); }} className="bg-transparent borderless w-100 text-start">
           <h5 className={`${clickedIndex === 0 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>ARENAS</h5>
@@ -29,7 +29,7 @@ const SideNav = () => {
           <h5 className={`${clickedIndex === 1 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>RESERVE</h5>
         </button>
         <button type="button" onClick={() => { setClickedIndex('reservation'); navigate('/reservations'); }} className="bg-transparent borderless w-100 text-start">
-          <h5 className={`${clickedIndex === 2 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>MY RESERVATIONS </h5>
+          <h5 className={`${clickedIndex === 2 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>MY RESERVATIONS</h5>
         </button>
         <button type="button" onClick={() => { setClickedIndex('additem'); navigate('/additem'); }} className="bg-transparent borderless w-100 text-start">
           <h5 className={`${clickedIndex === 3 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>ADD ARENAS</h5>
@@ -37,10 +37,8 @@ const SideNav = () => {
         <button type="button" onClick={() => { setClickedIndex('deleteitem'); navigate('/delete-item'); }} className="bg-transparent borderless w-100 text-start">
           <h5 className={`${clickedIndex === 4 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>DELETE </h5>
         </button>
-
         <button type="button" onClick={() => signOut()} className="bg-transparent borderless w-100 text-start">
           <h5 className={`${clickedIndex === 5 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>SIGN OUT</h5>
-
         </button>
       </div>
       <div className="sidebar-footer">

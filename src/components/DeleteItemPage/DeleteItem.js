@@ -33,7 +33,7 @@ const DeleteItem = () => {
       <div className="col-2 p-0">
         <SideNav />
       </div>
-      <div className="col-md-10 col-sm-12">
+      <div className="col-md-10 col-sm-12 delete-page">
         <header>
           <h1 className="header">Delete An Arena</h1>
         </header>

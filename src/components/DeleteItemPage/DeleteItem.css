@@ -5,3 +5,9 @@ header {
 .deleteItemCard {
   text-align: left;
 }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .delete-page {
+    margin-left: 35%;
+  }
+}
