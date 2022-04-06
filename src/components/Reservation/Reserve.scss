@@ -224,17 +224,18 @@ ul {
     color: $blue2;
   }
 }
+/* stylelint-enable at-rule-no-unknown */
 
-h1 {
-  margin: 10px 20px;
+
+.header-a {
+  margin-right: -50%;
 }
 
 
 @media only screen and (max-width: 600px){
-  ul{
-    margin-left: 15%;
-
-  }
+.wrapper {
+  margin-top: 20%;
+}
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .item-arena {
@@ -248,4 +249,3 @@ h1 {
     margin-left: 20%;
   }
 }
-/* stylelint-enable at-rule-no-unknown */

@@ -1,26 +1,26 @@
-/* .app-title{
+.app-title{
   color: rgb(75, 71, 71);
   white-space: nowrap;
 
   transform: translate(-50%, -50%);
-  font-size: 3em;
+  font-size: 20px;
   font-family: sans-serif;
   letter-spacing: 0.1em;
   transition: 0.3s;
-  text-shadow: 1px 1px 0 grey, 1px 2px 0 grey, 1px 3px 0 grey, 1px 4px 0 grey,
+  text-shadow: 1px 1px 0 rgb(237, 175, 100), 1px 2px 0 grey, 1px 3px 0 grey, 1px 4px 0 grey,
     1px 5px 0 grey, 1px 6px 0 grey, 1px 7px 0 grey, 1px 8px 0 grey,
     5px 13px 15px black;
     margin-left: 50%;
     margin-top: 10%;
-}*/
+}
 
-/*.app-title:hover {
+.app-title:hover {
   transition: 0.3s;
   transform: scale(1.1) translate(-50%, -50%);
-  text-shadow: 1px -1px 0 grey, 1px -2px 0 grey, 1px -3px 0 grey,
+  text-shadow: 1px -1px 0 rgb(180, 239, 54), 1px -2px 0 rgb(211, 101, 101), 1px -3px 0 rgb(100, 226, 186),
     1px -4px 0 grey, 1px -5px 0 grey, 1px -6px 0 grey, 1px -7px 0 grey,
     1px -8px 0 grey, 5px -13px 15px black, 5px -13px 25px #808080;
-} */
+}
 
 
 aside {
@@ -111,6 +111,12 @@ aside {
 
 .leftfill {
   margin-right: 98% !important;
+}
+
+@media only screen and (max-width: 600px){
+.item-arena {
+  margin-top:20%;
+  }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {

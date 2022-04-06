@@ -77,9 +77,9 @@ const ReservationForm = () => {
           <span>
             {loginResponse}
           </span>
-          <div className="d-flex flex-column justify-content-center text-white">
-            <h2 className="text-center">Reserve an Arena</h2>
-          </div>
+          <header>
+            <h1 className="header-a app-title">Reserved Arena</h1>
+          </header>
           <div className="d-flex">
             <select className="form-select me-2 rounded-pill" onChange={(e) => { setItemId(e.target.value); dispatch(getReservationDates(e.target.value, token)); }} value={itemId}>
               <option default>Select an Arena</option>

@@ -162,7 +162,11 @@
 	}
 }
 
-
+.wrapper,.add-item {
+  background: rgb(205,226,163);
+  background: linear-gradient(90deg, rgba(205,226,163,1) 17%, rgba(242,225,58,0.8295693277310925) 35%, rgba(0,212,255,1) 100%);
+  height: 100vh;
+}
 
 
 /* @media only screen and (max-width: 600px){
