@@ -9,26 +9,16 @@ import { getItems, getItemsDetails } from '../../api/items';
 import 'swiper/css';
 import { getToken } from '../../utils/sessionHelper';
 
-
 const Item = () => {
-  const items = useSelector((state) => state.items.items) || [];
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const token = getToken();
-
-  useEffect(() => {
-    dispatch(getItems(token));
-  }, []);
-
+  const items = useSelector((state) => state.items.items) || [];
   const [width, setWidth] = useState(window.innerWidth);
+  const token = getToken();
 
   const fixDimensions = () => {
     setWidth(window.innerWidth);
   };
-  useEffect(() => {
-    window.addEventListener('resize', fixDimensions);
-    return () => window.removeEventListener('resize', fixDimensions);
-  }, [items]);
 
   const renderDetailsPage = (id, name) => {
     dispatch(getItemsDetails(id, token)).then(() => {
@@ -36,15 +26,27 @@ const Item = () => {
     });
   };
 
+  useEffect(() => {
+    dispatch(getItems(token));
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('resize', fixDimensions);
+    return () => window.removeEventListener('resize', fixDimensions);
+  }, [items]);
+
   return (
-    <div className="item-cont min-vw-70 position-relative item-arena">
+    <div className="items-page">
+      {/* HEADER */}
       <h1 className="fw-bolder text-center my-3">Beautiful Arenas</h1>
+      {/* SUB HEADER */}
       <p className="text-muted text-center main-screen-subtitle">
         Please Select an Arena
       </p>
-      { items.length > 0 ? (
+      {items.length > 0 ? (
         <>
-          <div className="position-relative w-98 ">
+          {/* ITEMS SWIPER*/}
+          <div className="">
             <Swiper
               className="swiper"
               spaceBetween={0}
@@ -65,6 +67,7 @@ const Item = () => {
               ...........
             </Swiper>
           </div>
+
           <div className="d-sm-block d-none bsfill">
             <button
               type="button"
@@ -92,7 +95,7 @@ const Item = () => {
             </button>
           </div>
         </>
-      ) : <h2>Loading....</h2> }
+      ) : <h2>Loading....</h2>}
     </div>
   );
 };

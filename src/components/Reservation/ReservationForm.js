@@ -8,7 +8,6 @@ import 'react-datepicker/dist/react-datepicker.css';
 import './Reserve.scss';
 import { getToken } from '../../utils/sessionHelper';
 
-
 const ReservationForm = () => {
   const items = useSelector((state) => state.items.items) || [];
   const location = useLocation();

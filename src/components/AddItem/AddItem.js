@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import { AddItemHandler, getItems } from '../../api/items';
 import { getToken } from '../../utils/sessionHelper';
 
-
 const AddItem = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

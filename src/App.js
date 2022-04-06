@@ -17,15 +17,15 @@ function App() {
   const sessionDetails = useSelector((state) => state.sessions);
 
   return (
-    <div className="App text-center">
-      <div className="row">
+    <div className="App">
+      <div className="">
         <NavBar />
-        { sessionDetails.isSignIn && (
-        <div className="col-2 p-0">
-          <SideNav />
-        </div>
-        ) }
-        <div className="col-md-10 col-sm-12">
+        {sessionDetails.isSignIn && (
+          <div className="d-none d-lg-block">
+            <SideNav />
+          </div>
+        )}
+        <div className="">
           <Routes>
             <Route path="/" element={sessionDetails.isSignIn ? (<Navigate replace to="/items" />) : <SignIn />} />
             <Route exact path="/sign_in" element={sessionDetails.isSignIn ? (<Navigate replace to="/items" />) : <SignIn />} />

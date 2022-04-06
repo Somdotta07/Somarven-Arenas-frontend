@@ -5,6 +5,10 @@ aside {
   position: fixed;
 }
 
+.items-page {
+  margin-top: 200px;
+}
+
 .item-cont {
   margin: 0;
   height: 100vh;
@@ -62,11 +66,11 @@ aside {
   background-color: #97bf11;
   border-top-right-radius: 100%;
   border-bottom-right-radius: 100%;
-  left: 15%
+  left: 15%;
 }
 
 .free {
-  left: -2.4%
+  left: -2.4%;
 }
 
 .main-page-handle-right {

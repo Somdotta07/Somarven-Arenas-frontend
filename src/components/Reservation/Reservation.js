@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import './Reserve.scss';
 import getReserved from '../../api/reserved';
 import deleteReserve from '../../api/deleteReserve';
-import SideNav from '../SideNav';
 
 const Reservation = () => {
   const reservations = useSelector((state) => state.reservations.reservations) || [];
@@ -20,11 +19,11 @@ const Reservation = () => {
   }, [reservations]);
   const dispatch = useDispatch();
   const daysNum = (startDate, endDate) => {
-    const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+    const oneDayInMsec = 24 * 60 * 60 * 1000;
     const date1 = new Date(startDate);
     const date2 = new Date(endDate);
 
-    const diffDays = Math.round(Math.abs((date2 - date1) / oneDay));
+    const diffDays = Math.round(Math.abs((date2 - date1) / oneDayInMsec));
     if (diffDays === 0) {
       return 1;
     }

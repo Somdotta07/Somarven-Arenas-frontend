@@ -8,7 +8,6 @@ import { getItemsDetails, getReservationDates } from '../../api/items';
 import { controlModal } from '../../redux/items/ItemDetails';
 import { getToken } from '../../utils/sessionHelper';
 
-
 const DetailsPage = () => {
   const item = useSelector((state) => state.itemsDetailsReducer.items);
   const modal = useSelector((state) => state.itemsDetailsReducer.isModalOpen);

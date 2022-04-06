@@ -19,7 +19,7 @@ const SideNav = () => {
 
   const [clickedIndex, setClickedIndex] = useState(0);
   return (
-    <aside className="p-3 d-sm-block d-none">
+    <aside className="p-3">
       <div className="sidebar-items">
         <button type="button" onClick={() => { setClickedIndex(0); navigate('/items'); }} className="bg-transparent borderless w-100 text-start">
           <h5 className={`${clickedIndex === 0 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>ARENAS</h5>

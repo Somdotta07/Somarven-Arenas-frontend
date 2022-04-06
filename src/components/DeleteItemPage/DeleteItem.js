@@ -7,7 +7,6 @@ import { getItems } from '../../api/items';
 import './DeleteItem.css';
 import EventCard from './Item';
 
-
 const DeleteItem = () => {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.items.items) || [];
