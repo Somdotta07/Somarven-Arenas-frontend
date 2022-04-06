@@ -17,22 +17,22 @@ function App() {
 
   return (
     <div className="App">
-      <div className="row">
-        <NavBar />
-        <div className="col-md-12 col-sm-12">
-          <Routes>
-            <Route path="/" element={sessionDetails.isSignIn ? (<Navigate replace to="/items" />) : <SignIn />} />
-            <Route exact path="/sign_in" element={sessionDetails.isSignIn ? (<Navigate replace to="/items" />) : <SignIn />} />
-            <Route exact path="/signup" element={sessionDetails.isSignUp ? (<Navigate replace to="/sign_in" />) : <SignUp />} />
-            <Route path="/items" element={sessionDetails.isSignIn ? <Item /> : (<Navigate replace to="/sign_in" />)} />
-            <Route path="/details/:id/:name" element={sessionDetails.isSignIn ? <DetailsPage /> : (<Navigate replace to="/sign_in" />)} />
-            <Route path="/reserve" element={sessionDetails.isSignIn ? <ReservationForm /> : (<Navigate replace to="/sign_in" />)} />
-            <Route path="/addItem" element={sessionDetails.isSignIn ? <AddItem /> : (<Navigate replace to="/sign_in" />)} />
-            <Route path="/delete-item" element={sessionDetails.isSignIn ? <DeleteItem /> : (<Navigate replace to="/sign_in" />)} />
-            <Route path="/reservations" element={sessionDetails.isSignIn ? <Reservation /> : (<Navigate replace to="/sign_in" />)} />
-          </Routes>
-        </div>
+      {/* <div className="row"> */}
+      <NavBar />
+      <div className="col-md-12 col-sm-12">
+        <Routes>
+          <Route path="/" element={sessionDetails.isSignIn ? (<Navigate replace to="/items" />) : <SignIn />} />
+          <Route exact path="/sign_in" element={sessionDetails.isSignIn ? (<Navigate replace to="/items" />) : <SignIn />} />
+          <Route exact path="/signup" element={sessionDetails.isSignUp ? (<Navigate replace to="/sign_in" />) : <SignUp />} />
+          <Route path="/items" element={sessionDetails.isSignIn ? <Item /> : (<Navigate replace to="/sign_in" />)} />
+          <Route path="/details/:id/:name" element={sessionDetails.isSignIn ? <DetailsPage /> : (<Navigate replace to="/sign_in" />)} />
+          <Route path="/reserve" element={sessionDetails.isSignIn ? <ReservationForm /> : (<Navigate replace to="/sign_in" />)} />
+          <Route path="/addItem" element={sessionDetails.isSignIn ? <AddItem /> : (<Navigate replace to="/sign_in" />)} />
+          <Route path="/delete-item" element={sessionDetails.isSignIn ? <DeleteItem /> : (<Navigate replace to="/sign_in" />)} />
+          <Route path="/reservations" element={sessionDetails.isSignIn ? <Reservation /> : (<Navigate replace to="/sign_in" />)} />
+        </Routes>
       </div>
+      {/* </div> */}
     </div>
   );
 }

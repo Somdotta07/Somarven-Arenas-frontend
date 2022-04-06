@@ -48,7 +48,7 @@ const Item = () => {
         </p>
         { items.length > 0 ? (
           <>
-            <div className="row position-relative ">
+            <div className="row position-relative">
               <Swiper
                 spaceBetween={0}
                 slidesPerView={width > 768 ? 3 : 1}
