@@ -39,13 +39,10 @@ const AddItem = () => {
 
   return (
     <div className="row addItem">
-      <div className="col-2 p-0">
-        <SideNav />
-      </div>
       <header>
         <h1 className="addHeader">Add An Arena</h1>
       </header>
-      <div className="d-flex flex-column justify-content-center align-items-center col-md-10 col-sm-12 position-relative item-arena">
+      <div className="d-flex p-0 flex-column justify-content-center align-items-center position-relative item-arena">
         <form onSubmit={(e) => onSubmit(e)} className="mt-5 mx-3 ">
           <input type="text" className="form-control m-1" id="name" placeholder="Enter Name" name="name" onChange={(e) => handleChange(e)} style={divStyle} />
           <textarea rows="4" cols="50" type="text" className="form-control m-1" id="description" placeholder="Enter Description" name="description" onChange={(e) => handleChange(e)} style={divStyle} />

@@ -21,11 +21,7 @@ const DetailsPage = () => {
   }, []);
 
   return (
-    <div className="row">
-      <div className="col-2 p-0">
-        <SideNav />
-      </div>
-      <div className="container mt-5 col-md-10 col-sm-12 ">
+      <div className="container mt-5">
         <div>
           {modal && <Modal />}
         </div>
@@ -71,7 +67,6 @@ const DetailsPage = () => {
         )}
 
       </div>
-    </div>
   );
 };
 

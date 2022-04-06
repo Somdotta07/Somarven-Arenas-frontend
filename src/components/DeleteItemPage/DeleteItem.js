@@ -29,17 +29,14 @@ const DeleteItem = () => {
   useEffect(() => { dispatch(getItems(token)); }, []);
 
   return (
-    <div className="row">
-      <div className="col-2 p-0">
-        <SideNav />
-      </div>
-      <div className="col-md-10 col-sm-12 delete-page">
+    <div>
+      <div className="delete-page">
         <header>
           <h1 className="header">Delete An Arena</h1>
         </header>
         {items.length > 0 ? (
           <>
-            <Swiper
+            <Swiper className="swiper"
               spaceBetween={0}
               slidesPerView={width > 768 ? 3 : 1}
             >

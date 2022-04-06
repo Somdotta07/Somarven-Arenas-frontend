@@ -1,13 +1,17 @@
 aside {
   height: 100vh;
   border-right: 3px solid lightgrey;
-  width: 300px;
+  width: 16%;
   position: fixed;
 }
 
 .item-cont {
   margin: 0;
   height: 100vh;
+}
+
+.swiper {
+  width: 99%;
 }
 
 .sidebar-items {
@@ -58,6 +62,11 @@ aside {
   background-color: #97bf11;
   border-top-right-radius: 100%;
   border-bottom-right-radius: 100%;
+  left: 15%
+}
+
+.free {
+  left: -2.4%
 }
 
 .main-page-handle-right {

@@ -72,11 +72,7 @@ const ReservationForm = () => {
   };
 
   return (
-    <div className="wrapper row">
-      <div className="col-2 p-0">
-        <SideNav />
-      </div>
-      <div className="col-md-10 col-sm-12">
+    <div className="wrapper">
         <form className="d-flex flex-column h-100 justify-content-center align-items-center " onSubmit={reserveSubmit}>
           <section>
             <span>
@@ -107,7 +103,6 @@ const ReservationForm = () => {
           </section>
         </form>
       </div>
-    </div>
   );
 };
 

@@ -37,19 +37,15 @@ const Item = () => {
   };
 
   return (
-    <div className="item-cont row">
-      <div className="col-2 p-0">
-        <SideNav />
-      </div>
-      <div className="col-md-10 col-sm-12 min-vw-70 position-relative item-arena">
+    <div className="item-cont min-vw-70 position-relative item-arena">
         <h1 className="fw-bolder text-center my-3">Beautiful Arenas</h1>
         <p className="text-muted text-center main-screen-subtitle">
           Please Select an Arena
         </p>
         { items.length > 0 ? (
           <>
-            <div className="row position-relative ">
-              <Swiper
+            <div className="position-relative w-98 ">
+              <Swiper className= "swiper"
                 spaceBetween={0}
                 slidesPerView={width > 768 ? 3 : 1}
               >
@@ -77,7 +73,7 @@ const Item = () => {
                   swiper.slidePrev();
                 }}
               >
-                <div className="main-page-handle-left d-flex justify-content-center align-items-center ">
+                <div className="main-page-handle-left free d-flex justify-content-center align-items-center ">
                   <BsFillCaretLeftFill />
                 </div>
               </button>
@@ -97,7 +93,6 @@ const Item = () => {
           </>
         ) : <h2>Loading....</h2> }
       </div>
-    </div>
   );
 };
 export default Item;
