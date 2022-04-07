@@ -25,55 +25,51 @@ const DeleteItem = () => {
   useEffect(() => { dispatch(getItems(token)); }, []);
 
   return (
-    <div>
-      <div className="delete-page">
-        <header>
-          <h1 className="header app-title">Delete An Arena</h1>
-        </header>
-        {items.length > 0 ? (
-          <>
-            <Swiper
-              className="swiper"
-              spaceBetween={0}
-              slidesPerView={width > 768 ? 3 : 1}
-            >
-              <Row xs={1} md={2} lg={3} xl={4} className="g-4 mx-0">
-                {items.map((item) => (
-                  <SwiperSlide key={item.id}>
-                    <EventCard item={item} key={item.id} />
-                  </SwiperSlide>
-                ))}
-              </Row>
-            </Swiper>
-            <div className="d-sm-block d-none">
-              <button
-                type="button"
-                className="borderless bg-trasparent"
-                onClick={() => {
-                  const { swiper } = document.querySelector('.swiper');
-                  swiper.slidePrev();
-                }}
-              >
-                <div className="main-page-handle-left d-flex justify-content-center align-items-center ">
-                  <BsFillCaretLeftFill />
-                </div>
-              </button>
-              <button
-                type="button"
-                className="borderless bg-transparent"
-                onClick={() => {
-                  const { swiper } = document.querySelector('.swiper');
-                  swiper.slideNext();
-                }}
-              >
-                <div className="main-page-handle-right d-flex  justify-content-center align-items-center">
-                  <BsCaretRightFill />
-                </div>
-              </button>
+    <div className="delete-page">
+      <header>
+        <h1 className="header app-title">Delete An Arena</h1>
+      </header>
+      {items.length > 0 ? (
+        <>
+          <Swiper
+            className="swiper"
+            spaceBetween={0}
+            slidesPerView={width > 768 ? 3 : 1}
+          >
+            <Row xs={1} md={2} lg={3} xl={4} className="g-4 mx-0">
+              {items.map((item) => (
+                <SwiperSlide key={item.id}>
+                  <EventCard item={item} key={item.id} />
+                </SwiperSlide>
+              ))}
+            </Row>
+          </Swiper>
+          <button
+            type="button"
+            className="borderless bg-trasparent"
+            onClick={() => {
+              const { swiper } = document.querySelector('.swiper');
+              swiper.slidePrev();
+            }}
+          >
+            <div className="main-page-handle-left d-flex justify-content-center align-items-center">
+              <BsFillCaretLeftFill />
             </div>
-          </>
-        ) : <h2>Loading...</h2>}
-      </div>
+          </button>
+          <button
+            type="button"
+            className="borderless bg-transparent"
+            onClick={() => {
+              const { swiper } = document.querySelector('.swiper');
+              swiper.slideNext();
+            }}
+          >
+            <div className="main-page-handle-right d-flex justify-content-center align-items-center">
+              <BsCaretRightFill />
+            </div>
+          </button>
+        </>
+      ) : <h2>Loading...</h2>}
     </div>
   );
 };

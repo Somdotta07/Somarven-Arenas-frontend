@@ -84,7 +84,7 @@ const ItemsPage = () => {
               swiper.slideNext();
             }}
           >
-            <div className="main-page-handle-right d-flex  justify-content-center align-items-center">
+            <div className="main-page-handle-right d-flex justify-content-center align-items-center">
               <BsCaretRightFill />
             </div>
           </button>
