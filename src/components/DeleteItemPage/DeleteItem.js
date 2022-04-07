@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Row } from 'react-bootstrap';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BsCaretRightFill, BsFillCaretLeftFill } from 'react-icons/bs';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import calculateItemsPerView from '../../utils/itemsHelper';
 import { getItems } from '../../api/items';
-import './DeleteItem.css';
 import EventCard from './Item';
+import './DeleteItem.css';
 
 const DeleteItem = () => {
   const dispatch = useDispatch();
@@ -25,24 +25,22 @@ const DeleteItem = () => {
   useEffect(() => { dispatch(getItems(token)); }, []);
 
   return (
-    <div className="delete-page">
+    <div id="delete-page">
       <header>
-        <h1 className="header app-title">Delete An Arena</h1>
+        <h1 className="app-title">Delete An Arena</h1>
       </header>
       {items.length > 0 ? (
         <>
           <Swiper
-            className="swiper"
+            className="over-swiper"
             spaceBetween={0}
-            slidesPerView={width > 768 ? 3 : 1}
+            slidesPerView={calculateItemsPerView(width)}
           >
-            <Row xs={1} md={2} lg={3} xl={4} className="g-4 mx-0">
-              {items.map((item) => (
-                <SwiperSlide key={item.id}>
-                  <EventCard item={item} key={item.id} />
-                </SwiperSlide>
-              ))}
-            </Row>
+            {items.map((item) => (
+              <SwiperSlide key={item.id}>
+                <EventCard item={item} key={item.id} />
+              </SwiperSlide>
+            ))}
           </Swiper>
           <button
             type="button"

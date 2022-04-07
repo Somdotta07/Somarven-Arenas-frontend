@@ -1,19 +1,8 @@
-header {
-  padding: 20px;
+#delete-page {
+  display: flex;
+  flex-direction: column;
 }
 
 .deleteItemCard {
   text-align: left;
-}
-
-@media only screen and (max-width: 600px) {
-  .delete-page {
-    margin-top: 20%;
-  }
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .delete-page {
-    margin-left: 35%;
-  }
 }
