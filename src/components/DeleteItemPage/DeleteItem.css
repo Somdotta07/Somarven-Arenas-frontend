@@ -1,0 +1,8 @@
+#delete-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.deleteItemCard {
+  text-align: left;
+}
