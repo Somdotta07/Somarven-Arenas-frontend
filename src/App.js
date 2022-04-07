@@ -1,39 +1,47 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Col, Container, Row } from 'react-bootstrap';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import './App.css';
+import Item from './components/Items';
+import NavBar from './components/NavBar';
+import SideNav from './components/SideNav';
 import SignIn from './components/Sessions/SignIn';
 import SignUp from './components/Sessions/SignUp';
-import Item from './components/Item';
-import DetailsPage from './components/Details/DetailsPage';
-import ReservationForm from './components/Reservation/ReservationForm';
-import Reservation from './components/Reservation/Reservation';
-import VerticalNav from './components/VerticalNav';
 import AddItem from './components/AddItem/AddItem';
+import DetailsPage from './components/Details/DetailsPage';
+import Reservation from './components/Reservation/Reservation';
 import DeleteItem from './components/DeleteItemPage/DeleteItem';
-import './App.css';
+import ReservationForm from './components/Reservation/ReservationForm';
 
 function App() {
   const sessionDetails = useSelector((state) => state.sessions);
+
   return (
-    <div className="App">
-      <div className="row">
-        <div className="col-2 p-0">
-          <VerticalNav />
-        </div>
-        <div className="col-md-10 col-sm-12 ">
-          <Routes>
-            <Route exact path="/" element={sessionDetails.isSignIn ? (<Navigate replace to="/items" />) : <SignIn />} />
-            <Route exact path="/signup" element={sessionDetails.isSignUp ? (<Navigate replace to="/" />) : <SignUp />} />
-            <Route path="/items" element={<Item />} />
-            <Route path="/Details/:id/:name" element={<DetailsPage />} />
-            <Route path="/reserve" element={<ReservationForm />} />
-            <Route path="/DeleteItem" element={<DeleteItem />} />
-            <Route path="/reservations" element={<Reservation />} />
-            <Route path="/" element={sessionDetails.isSignIn || <SignIn />} />
-            <Route path="/AddItem" element={<AddItem />} />
-          </Routes>
-        </div>
-      </div>
+    <div id="App" className="text-center">
+      <NavBar />
+      <Container fluid className="p-0">
+        <Row className="p-0 m-0">
+          {sessionDetails.isSignIn ? (
+            <Col lg={3} className="p-0">
+              <SideNav />
+            </Col>
+          ) : ''}
+          <Col lg={9} className="p-0">
+            <Routes>
+              <Route path="/" element={sessionDetails.isSignIn ? (<Navigate replace to="/items" />) : <SignIn />} />
+              <Route path="/items" element={sessionDetails.isSignIn ? <Item /> : (<Navigate replace to="/sign_in" />)} />
+              <Route path="/addItem" element={sessionDetails.isSignIn ? <AddItem /> : (<Navigate replace to="/sign_in" />)} />
+              <Route exact path="/sign_in" element={sessionDetails.isSignIn ? (<Navigate replace to="/items" />) : <SignIn />} />
+              <Route exact path="/signup" element={sessionDetails.isSignUp ? (<Navigate replace to="/sign_in" />) : <SignUp />} />
+              <Route path="/delete-item" element={sessionDetails.isSignIn ? <DeleteItem /> : (<Navigate replace to="/sign_in" />)} />
+              <Route path="/reserve" element={sessionDetails.isSignIn ? <ReservationForm /> : (<Navigate replace to="/sign_in" />)} />
+              <Route path="/reservations" element={sessionDetails.isSignIn ? <Reservation /> : (<Navigate replace to="/sign_in" />)} />
+              <Route path="/details/:id/:name" element={sessionDetails.isSignIn ? <DetailsPage /> : (<Navigate replace to="/sign_in" />)} />
+            </Routes>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }

@@ -3,7 +3,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Button } from 'react-bootstrap';
 import { handleSignIn } from '../../redux/signin/login';
+import loginImg from './login.png';
 
 const SignIn = () => {
   const [userName, setUserName] = useState('');
@@ -17,8 +19,12 @@ const SignIn = () => {
   };
 
   return (
-    <div>
-      <form>
+    <div className="signedIn">
+      <div>
+        <img src={loginImg} width="300" style={{ position: 'relative' }} alt="login" />
+      </div>
+      <form className="loginform">
+        <h2 className="headerTitle">Login</h2>
         <label htmlFor="username" id="username" />
         <input
           type="text"
@@ -39,12 +45,22 @@ const SignIn = () => {
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
+        <button
+          type="submit"
+          className="submit-btn sign"
+          onClick={(e) => signInUser(e)}
+        >
+          Sign In
+        </button>
       </form>
-      <div>
-        <h4>New User?</h4>
-        <Link to="/signup">Sign up here</Link>
+      <div className="newUser">
+        <h5 className="new-user-head">New User?</h5>
+        <Button variant="outline-success">
+          <Link to="/signup" className="default-link">
+            Sign up
+          </Link>
+        </Button>
       </div>
-      <button type="submit" className="submit-btn" onClick={(e) => signInUser(e)}>Sign In</button>
     </div>
   );
 };

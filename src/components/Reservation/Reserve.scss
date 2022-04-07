@@ -1,3 +1,5 @@
+/* stylelint-disable at-rule-no-unknown */
+
 $font : 'Sofia', sans-serif;
 $font-size:16px;
 $blue : #0a4870;
@@ -53,6 +55,7 @@ ul {
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
+  margin-right: 10%;
 
   .booking-card {
     position: relative;
@@ -110,7 +113,7 @@ ul {
           &:hover {
             background: white;
             border: 0 solid white;
-            color: #97bf11;;
+            color: #97bf11;
           }
         }
       }
@@ -221,7 +224,23 @@ ul {
     color: $blue2;
   }
 }
+/* stylelint-enable at-rule-no-unknown */
 
-h1 {
-  margin: 10px 20px;
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    margin-top: 20%;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .item-arena {
+    margin-left: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  ul {
+    gap: 10px;
+    margin-left: 20%;
+  }
 }

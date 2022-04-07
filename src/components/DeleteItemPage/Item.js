@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   Button,
@@ -13,6 +14,7 @@ import { deleteItemFromAPI } from '../../api/items';
 const EventCard = (props) => {
   const { item } = props;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const sessionDetails = useSelector((state) => state.sessions);
 
@@ -20,6 +22,7 @@ const EventCard = (props) => {
 
   const deleteItem = (id) => {
     dispatch(deleteItemFromAPI(id, token));
+    navigate('/delete-item');
   };
 
   return (

@@ -1,5 +1,6 @@
-header {
-  padding: 90px;
+#delete-page {
+  display: flex;
+  flex-direction: column;
 }
 
 .deleteItemCard {

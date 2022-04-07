@@ -1,5 +1,26 @@
-.sidebar-items {
-  margin-top: 10vh;
+#items-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-title {
+  color: rgb(75, 71, 71);
+  white-space: nowrap;
+  font-size: 20px;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  transition: 0.3s;
+  text-shadow:
+    1px 1px 0 rgb(237, 175, 100),
+    1px 2px 0 grey,
+    1px 3px 0 grey,
+    1px 4px 0 grey,
+    1px 5px 0 grey,
+    1px 6px 0 grey,
+    1px 7px 0 grey,
+    1px 8px 0 grey,
+    5px 13px 15px black;
+  margin-top: 115px;
 }
 
 aside {
@@ -10,15 +31,6 @@ aside {
 .item-cont {
   margin: 0;
   height: 100vh;
-}
-
-.sidebar-items {
-  margin-top: 10vh;
-}
-
-.sidebar-footer {
-  position: absolute;
-  bottom: 20px;
 }
 
 .sidebar-item-active {
@@ -41,11 +53,6 @@ aside {
   font-size: small;
 }
 
-.item-card-description {
-  font-size: small;
-}
-
-
 .borderless {
   border: none !important;
 }
@@ -55,9 +62,11 @@ aside {
 }
 
 .main-page-handle-left {
-  position: absolute;
   z-index: 100;
+  position: absolute;
   top: 50vh;
+
+  /* left: 0px; */
   width: 60px;
   height: 50px;
   font-size: 20px;
@@ -68,20 +77,29 @@ aside {
 }
 
 .main-page-handle-right {
-  position: absolute;
   z-index: 100;
+  position: absolute;
   top: 50vh;
   right: 0;
-  float: right;
   width: 60px;
   height: 50px;
-  background-color: #97bf11;
-  color: white;
   font-size: 20px;
+  color: white;
+  background-color: #97bf11;
   border-bottom-left-radius: 100%;
   border-top-left-radius: 100%;
 }
 
-.leftfill {
-  margin-right: 100% !important;
+@media only screen and (max-width: 600px) {
+  .item-arena {
+    margin-top: 20%;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .item-arena {
+    margin-left: 40%;
+    display: flex;
+    flex-direction: column;
+  }
 }

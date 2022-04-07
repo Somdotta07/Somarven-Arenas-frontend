@@ -7,6 +7,7 @@ const Items = ({ item, onClick }) => {
     name, image, description, city, price,
   } = item;
   return (
+
     <button
       type="button"
       className="bg-transparent borderless"

@@ -1,46 +1,44 @@
 import axios from 'axios';
 import { fetchItems } from '../redux/items/items';
-import { fetchItemsDetails } from '../redux/items/ItemDetails';
+import { fetchItemsDetails, fetchReservationDates } from '../redux/items/ItemDetails';
 import { addItem } from '../redux/items/AddItem';
 import { deleteItemFromState } from '../redux/items/deleteItemReducer';
 
-const BASE_URL = 'http://127.0.0.1:3000/api/v1/items';
+const BASE_URL = 'https://somarven.herokuapp.com/api/v1';
 
 export const getItems = (token) => async (dispatch) => {
-  const response = await axios.get(BASE_URL, { headers: { Authorization: token } });
+  const response = await axios.get(`${BASE_URL}/items`, { headers: { Authorization: token } });
   dispatch(fetchItems(response.data.data));
 };
 
 export const getItemsDetails = (id, token) => async (dispatch) => {
-  fetch(`http://127.0.0.1:3000/api/v1/items/${id} `, { headers: { Authorization: token } })
+  fetch(`${BASE_URL}/items/${id}`, { headers: { Authorization: token } })
     .then((response) => response.json())
     .then((res) => dispatch(fetchItemsDetails(res.data)));
 };
 
-export const AddItemHandler = (data) => async (dispatch) => {
-  const token = JSON.parse(localStorage.getItem('token'));
-  // console.log(token);
-  const formData = new FormData();
-  formData.append('name', data.name);
-  formData.append('image', data.image);
-  formData.append('description', data.description);
-  formData.append('city', data.city);
-  formData.append('capacity', data.capacity);
-  formData.append('price', data.price);
-  await fetch('http://localhost:3000/api/v1/items', {
+export const getReservationDates = (id, token) => async (dispatch) => {
+  fetch(`${BASE_URL}/itemreservations/${id}`, { headers: { Authorization: token } })
+    .then((response) => response.json())
+    .then((res) => dispatch(fetchReservationDates(res.data)));
+};
+
+export const AddItemHandler = (item, token) => async (dispatch) => {
+  const newItem = { item };
+  await fetch(`${BASE_URL}/items`, {
     method: 'POST',
-    body: formData,
+    body: JSON.stringify(newItem),
     headers: {
       'Content-Type': 'application/json',
       Authorization: token,
     },
   })
     .then((res) => res.json())
-    .then((resResponse) => dispatch(addItem(resResponse.data)));
+    .then((resResponse) => dispatch(addItem(resResponse)));
 };
 
 export const deleteItemFromAPI = (id, token) => async (dispatch) => {
-  await axios.delete(`${BASE_URL}/${id}`, { headers: { Authorization: token } })
+  await axios.delete(`${BASE_URL}/items/${id}`, { headers: { Authorization: token } })
     .then(() => ({ status: `Item#${id} Deleted successfully` }))
     .then((res) => dispatch(deleteItemFromState(res)));
   dispatch(getItems(token));

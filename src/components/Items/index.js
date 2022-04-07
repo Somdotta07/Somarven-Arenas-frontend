@@ -1,34 +1,49 @@
-import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BsCaretRightFill, BsFillCaretLeftFill } from 'react-icons/bs';
+import 'swiper/css';
+import './Item.css';
+import Items from './Items';
+import { getToken } from '../../utils/sessionHelper';
+import { getItems, getItemsDetails } from '../../api/items';
 import calculateItemsPerView from '../../utils/itemsHelper';
-import { getItems } from '../../api/items';
-import EventCard from './Item';
-import './DeleteItem.css';
 
-const DeleteItem = () => {
+const ItemsPage = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const items = useSelector((state) => state.items.items) || [];
-  const sessionDetails = useSelector((state) => state.sessions);
+  const token = getToken();
   const [width, setWidth] = useState(window.innerWidth);
-  const token = sessionDetails.user_token || JSON.parse(localStorage.getItem('token'));
+  const items = useSelector((state) => state.items.items) || [];
 
   const fixDimensions = () => {
     setWidth(window.innerWidth);
   };
+
+  const renderDetailsPage = (id, name) => {
+    dispatch(getItemsDetails(id, token)).then(() => {
+      navigate(`/details/${id}/${name}`);
+    });
+  };
+
+  useEffect(() => {
+    dispatch(getItems(token));
+  }, []);
+
   useEffect(() => {
     window.addEventListener('resize', fixDimensions);
     return () => window.removeEventListener('resize', fixDimensions);
   }, [items]);
 
-  useEffect(() => { dispatch(getItems(token)); }, []);
-
   return (
-    <div id="delete-page">
-      <header>
-        <h1 className="app-title">Delete An Arena</h1>
-      </header>
+    <div id="items-page">
+      <div className="app-title">
+        <h1>Somarven Arenas</h1>
+        <p className="text-muted main-screen-subtitle">
+          Please Select an Arena
+        </p>
+      </div>
       {items.length > 0 ? (
         <>
           <Swiper
@@ -38,13 +53,20 @@ const DeleteItem = () => {
           >
             {items.map((item) => (
               <SwiperSlide key={item.id}>
-                <EventCard item={item} key={item.id} />
+                <div className="d-flex justify-content-center">
+                  <Items
+                    item={item}
+                    onClick={() => {
+                      renderDetailsPage(item.id, item.name);
+                    }}
+                  />
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
           <button
             type="button"
-            className="borderless bg-trasparent"
+            className="borderless bg-transparent"
             onClick={() => {
               const { swiper } = document.querySelector('.swiper');
               swiper.slidePrev();
@@ -67,9 +89,9 @@ const DeleteItem = () => {
             </div>
           </button>
         </>
-      ) : <h2>Loading...</h2>}
+      ) : <h2>Loading....</h2>}
     </div>
   );
 };
 
-export default DeleteItem;
+export default ItemsPage;

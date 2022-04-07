@@ -1,35 +1,63 @@
 import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import {
+  Navbar,
+  Nav,
+  Container,
+  Button,
+} from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
 import { handleSignOut } from '../redux/signin/login';
+import logo from '../logo.png';
 
 function NavBar() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const sessions = useSelector((state) => state.sessions);
 
   const signOut = () => {
-    dispatch(handleSignOut());
+    dispatch(handleSignOut()).then(() => {
+      navigate('/sign_in');
+    });
   };
+
   return (
-    <>
-      <Navbar collapseOnSelect fixed="top" expand="sm" bg="dark" variant="dark" className="d-lg-block d-xl-none">
-        <Container>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" data-bs-target="#responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav>
-              <Nav.Link href="/">Sign in</Nav.Link>
-              <Nav.Link href="/signup">Sign up</Nav.Link>
-              <Nav.Link href="/items">Items</Nav.Link>
-              <Nav.Link href="/details">Details</Nav.Link>
-              <Nav.Link href="/reserve">Reserve</Nav.Link>
-              <Nav.Link href="/reservations">MyReservations</Nav.Link>
-              <Nav.Link href="/delete-item">DeleteItem</Nav.Link>
-              <Nav.Link href="/additem">AddItem</Nav.Link>
-              <Nav.Link href="/" onClick={() => signOut()}>Sign Out</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </>
+    <Navbar collapseOnSelect fixed="top" expand="md" bg="light" variant="light" className="d-block d-lg-none">
+      <Container className="d-flex">
+        <Navbar.Brand href="/items" className="d-flex align-items-center">
+          <img
+            alt=""
+            src={logo}
+            width="50"
+            height="50"
+            className="d-inline-block align-top"
+          />
+          {' '}
+          Somarven
+        </Navbar.Brand>
+        {sessions.isSignIn
+          ? (
+            <>
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" data-bs-target="#responsive-navbar-nav" />
+              <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="d-flex align-items-center text-center">
+                  <Nav.Link href="/items">ALL ARENAS</Nav.Link>
+                  <hr />
+                  <Nav.Link href="/reserve">RESERVE</Nav.Link>
+                  <Nav.Link href="/reservations">MY RESERVATIONS</Nav.Link>
+                  <hr />
+                  <Nav.Link href="/additem">ADD ARENA</Nav.Link>
+                  <Nav.Link href="/delete-item">DELETE ARENA</Nav.Link>
+                  <hr />
+                  <Nav.Link>
+                    <Button onClick={() => signOut()} variant="dark">Sign Out</Button>
+                  </Nav.Link>
+                </Nav>
+              </Navbar.Collapse>
+            </>
+          ) : ''}
+      </Container>
+    </Navbar>
   );
 }
 
