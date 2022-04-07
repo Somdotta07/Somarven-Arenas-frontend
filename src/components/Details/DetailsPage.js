@@ -48,7 +48,7 @@ const DetailsPage = () => {
                     <td>{item.capacity}</td>
                   </tr>
                   <tr>
-                    <td>Total Cost</td>
+                    <td>Cost / Day</td>
                     <td>{`$${(item.price)}`}</td>
                   </tr>
                 </tbody>

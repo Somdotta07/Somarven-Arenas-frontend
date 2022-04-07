@@ -8,6 +8,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { handleSignOut } from '../redux/signin/login';
+import logo from '../logo.png';
 
 function NavBar() {
   const dispatch = useDispatch();
@@ -23,12 +24,12 @@ function NavBar() {
   return (
     <Navbar collapseOnSelect fixed="top" expand="md" bg="light" variant="light" className="d-block d-lg-none">
       <Container className="d-flex">
-        <Navbar.Brand href="/items">
+        <Navbar.Brand href="/items" className="d-flex align-items-center">
           <img
             alt=""
-            src="https://react-bootstrap.github.io/logo.svg"
-            width="30"
-            height="30"
+            src={logo}
+            width="50"
+            height="50"
             className="d-inline-block align-top"
           />
           {' '}

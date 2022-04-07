@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { FaFacebookF, FaGooglePlus } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { GrPinterest } from 'react-icons/gr';
 import { BsTwitter, BsVimeo } from 'react-icons/bs';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { FaFacebookF, FaGooglePlus } from 'react-icons/fa';
 import { handleSignOut } from '../redux/signin/login';
-import './Item/Item.css';
+import Logo from './Logo';
+import './Items/Item.css';
 
 const SideNav = () => {
   const dispatch = useDispatch();
@@ -19,12 +20,14 @@ const SideNav = () => {
 
   const [clickedIndex, setClickedIndex] = useState(0);
   return (
-    <aside className="p-3 d-sm-block d-none">
-      <div className="logo-text">
-        <h2 className="fw-bolder fst-italic ">Somarven</h2>
-        <h2 className="fw-bolder fst-italic ">Somarven</h2>
-      </div>
-      <h1 className="brackets">Arena</h1>
+    <aside className="d-none d-lg-flex flex-column justify-content-evenly align-items-center">
+      <span>
+        <div id="logo-text">
+          <h2 className="fw-bolder">Somarven</h2>
+          <h2 className="fw-bolder">Somarven</h2>
+        </div>
+      </span>
+      <Logo />
       <div className="sidebar-items">
         <button type="button" onClick={() => { setClickedIndex(0); navigate('/items'); }} className="bg-transparent borderless w-100 text-start">
           <h5 className={`${clickedIndex === 0 && 'sidebar-item-active '} py-2 fw-bold ps-2`}>ARENAS</h5>
@@ -65,7 +68,6 @@ const SideNav = () => {
         </div>
         <div className="text-wrap">© 2022 Final capstone project</div>
       </div>
-      <div />
     </aside>
   );
 };

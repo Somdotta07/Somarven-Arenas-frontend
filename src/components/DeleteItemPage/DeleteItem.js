@@ -45,10 +45,10 @@ const DeleteItem = () => {
                 ))}
               </Row>
             </Swiper>
-            <div className="d-sm-block d-none bsfill">
+            <div className="d-sm-block d-none">
               <button
                 type="button"
-                className="borderless bg-trasparent leftfill"
+                className="borderless bg-trasparent"
                 onClick={() => {
                   const { swiper } = document.querySelector('.swiper');
                   swiper.slidePrev();
