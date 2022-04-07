@@ -39,7 +39,7 @@ const ItemsPage = () => {
   return (
     <div id="items-page">
       <div className="app-title">
-        <h1>Beautiful Arenas</h1>
+        <h1>Somarven Arenas</h1>
         <p className="text-muted main-screen-subtitle">
           Please Select an Arena
         </p>

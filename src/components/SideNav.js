@@ -66,7 +66,7 @@ const SideNav = () => {
             <GrPinterest />
           </span>
         </div>
-        <div className="text-wrap">© 2022 Final capstone project</div>
+        <div className="text-wrap">© 2022 Somarven Arenas</div>
       </div>
     </aside>
   );
