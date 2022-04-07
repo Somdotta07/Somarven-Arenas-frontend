@@ -3,6 +3,7 @@ import { clearSession, getToken } from '../../utils/sessionHelper';
 const SIGN_UP = 'store/log_in/USER_SIGN_UP';
 const SIGN_IN = 'store/log_in/USER_SIGN_IN';
 const SIGN_OUT = 'store/log_in/USER_SIGN_OUT';
+const BASE_URL = 'https://somarven.herokuapp.com';
 
 const initialState = {
   isSignUp: false,
@@ -28,7 +29,7 @@ const userSignOut = (message) => ({
 
 export const handleSignIn = (username, password) => async (dispatch) => {
   const userDetails = { user: { username, password } };
-  const user = await fetch('http://127.0.0.1:3000/users/sign_in', {
+  const user = await fetch(`${BASE_URL}/users/sign_in`, {
     method: 'POST',
     body: JSON.stringify(userDetails),
     headers: {
@@ -49,7 +50,7 @@ export const handleSignIn = (username, password) => async (dispatch) => {
 
 export const handleSignUp = (email, username, password) => async (dispatch) => {
   const userDetails = { user: { email, username, password } };
-  const t = await fetch('http://127.0.0.1:3000/users', {
+  const t = await fetch(`${BASE_URL}/users`, {
     method: 'POST',
     body: JSON.stringify(userDetails),
     headers: {
@@ -64,7 +65,7 @@ export const handleSignUp = (email, username, password) => async (dispatch) => {
 
 export const handleSignOut = () => async (dispatch) => {
   const token = getToken();
-  const t = await fetch('http://127.0.0.1:3000/users/sign_out', {
+  const t = await fetch(`${BASE_URL}/users/sign_out`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',

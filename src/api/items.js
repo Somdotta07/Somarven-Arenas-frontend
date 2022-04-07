@@ -4,28 +4,28 @@ import { fetchItemsDetails, fetchReservationDates } from '../redux/items/ItemDet
 import { addItem } from '../redux/items/AddItem';
 import { deleteItemFromState } from '../redux/items/deleteItemReducer';
 
-const BASE_URL = 'http://127.0.0.1:3000/api/v1/items';
+const BASE_URL = 'https://somarven.herokuapp.com/api/v1';
 
 export const getItems = (token) => async (dispatch) => {
-  const response = await axios.get(BASE_URL, { headers: { Authorization: token } });
+  const response = await axios.get(`${BASE_URL}/items`, { headers: { Authorization: token } });
   dispatch(fetchItems(response.data.data));
 };
 
 export const getItemsDetails = (id, token) => async (dispatch) => {
-  fetch(`http://127.0.0.1:3000/api/v1/items/${id} `, { headers: { Authorization: token } })
+  fetch(`${BASE_URL}/items/${id}`, { headers: { Authorization: token } })
     .then((response) => response.json())
     .then((res) => dispatch(fetchItemsDetails(res.data)));
 };
 
 export const getReservationDates = (id, token) => async (dispatch) => {
-  fetch(`http://127.0.0.1:3000/api/v1/itemreservations/${id} `, { headers: { Authorization: token } })
+  fetch(`${BASE_URL}/itemreservations/${id}`, { headers: { Authorization: token } })
     .then((response) => response.json())
     .then((res) => dispatch(fetchReservationDates(res.data)));
 };
 
 export const AddItemHandler = (item, token) => async (dispatch) => {
   const newItem = { item };
-  await fetch('http://localhost:3000/api/v1/items', {
+  await fetch(`${BASE_URL}/items`, {
     method: 'POST',
     body: JSON.stringify(newItem),
     headers: {
@@ -38,7 +38,7 @@ export const AddItemHandler = (item, token) => async (dispatch) => {
 };
 
 export const deleteItemFromAPI = (id, token) => async (dispatch) => {
-  await axios.delete(`${BASE_URL}/${id}`, { headers: { Authorization: token } })
+  await axios.delete(`${BASE_URL}/items/${id}`, { headers: { Authorization: token } })
     .then(() => ({ status: `Item#${id} Deleted successfully` }))
     .then((res) => dispatch(deleteItemFromState(res)));
   dispatch(getItems(token));
