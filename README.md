@@ -37,8 +37,8 @@
 To get a local copy up and running follow these simple example steps
 
 - From your terminal enter in sequence
-  - `git clone git@github.com:Somdotta07/final-capstone-front-end.git`
-  - `code final-capstone-front-end`
+  - `git clone git@github.com:Somdotta07/Somarven-Arenas-frontend.git`
+  - `code Somarven-Arenas-frontend`
 
 
 ## Coders
