@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Somarven Arenas 
 
-## Available Scripts
+> This is a website that allows users to login, see list of Arenas, register an Arena or delete Arenas, create reservations for Arenas with city and date and see list of reservation. All of this is handled with react and redux and gets info from the back-end api. this project was built as the final capstone project for the Microverse full-stack developer curriculum.This design is responsive.
+![Main Page](https://user-images.githubusercontent.com/84907743/162257741-6e4aca3e-cd0f-41f1-928f-cc1d2e27c3fe.PNG)
+![Details Page](https://user-images.githubusercontent.com/84907743/162258782-d44da40a-1a03-4f75-8c61-169f335b799c.PNG)
+![Reservation Page](https://user-images.githubusercontent.com/84907743/162258419-381705f7-63fe-4f6b-9be2-5f95e701dbc9.PNG)
 
-In the project directory, you can run:
 
-### `npm start`
+## Live Demo ()
+[ 👉Please check ]()
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Back-end Repo
+[ 👉 Here](https://github.com/mckent05/Somarven-Arenas-backend)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Kanban Board 
+[Link](https://github.com/mckent05/Final-capstone-backend/projects/1)
+  - [Initial State1](https://user-images.githubusercontent.com/84907743/162248640-b50cc653-fe10-4b3f-8e9e-b36d429b6894.PNG)
+  - [Initial State2](https://user-images.githubusercontent.com/84907743/162248793-3778d5fc-3478-446c-b573-496207718f72.PNG)
 
-### `npm test`
+## Team members
+  - 3
+  
+## Built With
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React js
+- Redux
+- Bootstrap 
+- Javascript
+- CSS
+- JSX
+- Swipe JS
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To get a local copy up and running follow these simple example steps
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- From your terminal enter in sequence
+  - `git clone git@github.com:Somdotta07/final-capstone-front-end.git`
+  - `code final-capstone-front-end`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Coders
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+👤 **Somdotta Sarkar**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- GitHub: [@Somdotta07](https://github.com/Somdotta07)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/somdottasarkar)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+👤 **Akinlade Tope**
 
-## Learn More
+- GitHub: [@mckent05](https://github.com/mckent05)
+- LinkedIn: [Akinlade Temitope](https://www.linkedin.com/in/akinladetemitope/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+👤 **Omar Rashad**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- GitHub: [@od-c0d3r](https://github.com/od-c0d3r)
+- LinkedIn: [@omarrashad](https://linkedin.com/in/omarrashad)
 
-### Code Splitting
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Contributions, issues, and feature requests are welcome!
 
-### Analyzing the Bundle Size
+Feel free to check the [issues page](../../issues/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Show your support
 
-### Making a Progressive Web App
+Give a ⭐️ if you like this project!
+## Acknowledgments 
+- [Murat Korkmaz Design on Behance](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](./MIT.md) licensed.
