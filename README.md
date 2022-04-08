@@ -2,17 +2,22 @@
 
 # Somarven Arenas 
 
-> This is a website that allows users to login, see list of Arenas, register an Arena or delete Arenas, create reservations for Arenas with city and date and see list of reservation. All of this is handled with react and redux and gets info from the back-end api. this project was built as the final capstone project for the Microverse full-stack developer curriculum.This design is responsive.
+> This is a website that allows users to login, see list of Arenas, register an Arena or delete Arenas, create reservations for Arenas with city and date and see list of reservation. 
+
+> All of this is handled with React and Redux and gets info from the back-end api. 
+
+> This project was built as the final capstone project for the Microverse full-stack developer curriculum.This design is responsive.
+
 ![Main Page](https://user-images.githubusercontent.com/84907743/162257741-6e4aca3e-cd0f-41f1-928f-cc1d2e27c3fe.PNG)
 ![Details Page](https://user-images.githubusercontent.com/84907743/162258782-d44da40a-1a03-4f75-8c61-169f335b799c.PNG)
 ![Reservation Page](https://user-images.githubusercontent.com/84907743/162258419-381705f7-63fe-4f6b-9be2-5f95e701dbc9.PNG)
 
 
-## Live Demo ()
-[ 👉Please check ](https://somarven.netlify.app/)
+## Live Demo
+[👉 Please check](https://somarven.netlify.app/)
 
 ## Back-end Repo
-[ 👉 Here](https://github.com/mckent05/Somarven-Arenas-backend)
+[👉 Here](https://github.com/mckent05/Somarven-Arenas-backend)
 
 ## Kanban Board 
 [Link](https://github.com/mckent05/Final-capstone-backend/projects/1)
@@ -68,8 +73,11 @@ Feel free to check the [issues page](../../issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
 ## Acknowledgments 
 - [Murat Korkmaz Design on Behance](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
+- Rémi Rucojevic codepen
+
 ## License
 
 This project is [MIT](./MIT.md) licensed.
